@@ -5,6 +5,7 @@ fields:
 - name: title
   type: text
   config:
-    required: false
+    required: true
   label: Title
   description: Main page title
+  default: Bob was here...
