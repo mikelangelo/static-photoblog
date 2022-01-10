@@ -7,7 +7,6 @@ sections:
 - type: document
   path: pages/*
   label: Image Post
-  match: "**/*"
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
