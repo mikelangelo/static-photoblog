@@ -6,14 +6,6 @@ webhook_url:
 sections:
 - type: heading
   label: PAGES
-- type: document
-  path: source/pages/homepage.njk
-  label: HomePage
-- type: heading
-  label: POST
-- type: document
-  path: pages/*
-  label: Image Post
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
