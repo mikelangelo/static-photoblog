@@ -1,6 +1,7 @@
 ---
 label: HomePage
 hide_body: true
+display_field: pageTitle
 fields:
 - name: pageTitle
   type: text
@@ -8,3 +9,13 @@ fields:
     required: false
   label: Page Title
   description: test page title
+- name: homeDescription
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Home Description
+  description: Summary of homepage and test field.
