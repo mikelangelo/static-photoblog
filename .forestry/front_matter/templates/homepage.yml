@@ -1,0 +1,10 @@
+---
+label: HomePage
+hide_body: true
+fields:
+- name: pageTitle
+  type: text
+  config:
+    required: false
+  label: Page Title
+  description: test page title
