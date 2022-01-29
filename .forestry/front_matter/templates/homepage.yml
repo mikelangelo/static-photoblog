@@ -1,6 +1,7 @@
 ---
 label: HomePage
 hide_body: true
+display_field: pageTitle
 fields:
 - name: pageTitle
   type: text
