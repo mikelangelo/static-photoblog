@@ -4,14 +4,13 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
-- type: document
-  path: source/pages/homepage.njk
-  label: Home
-  match: "**/*"
 - type: heading
   label: POSTS
 - type: heading
   label: PAGES
+- type: document
+  path: source/pages/homepage.njk
+  label: Home
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
