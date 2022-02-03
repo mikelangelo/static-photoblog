@@ -12,7 +12,7 @@ permalink: /posts/{{ title|slugURL }}-{{ date|slugURL }}/
 
 		{%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
 		{%- if previousPost %}
-			<div> <<div <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></div>
+			<div> <a href="{{ previousPost.url | url }}"><< {{ previousPost.data.title }}</a></div>
 		{% endif %}
 
 		{%- set nextPost = collections.posts | getNextCollectionItem(page) %}
