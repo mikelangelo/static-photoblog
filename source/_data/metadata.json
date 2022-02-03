@@ -1,5 +1,5 @@
 {
-	"title": "Celestial - An Eleventy Website Template",
-	"url": "https://eleventy-website-template.netlify.app",
-	"description": "A starter repository showing how to build a website with the Eleventy static site generator."
+	"title": "Mikelangelo Photoblog",
+	"url": "http://www.mikelangelo.photo",
+	"description": "A photoblog website built with 11ty and Celestial."
 }

@@ -38,5 +38,8 @@
 		"postcss": "^8.2.14",
 		"slugify": "^1.5.0",
 		"terser": "^5.7.0"
+	},
+	"dependencies": {
+		"exifreader": "^4.2.0"
 	}
 }
