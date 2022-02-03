@@ -2,14 +2,12 @@
 new_page_extension: md
 auto_deploy: false
 admin_path: ''
-webhook_url:
+webhook_url: 
 sections:
-- type: heading
-  label: POSTS
 - type: heading
   label: PAGES
 - type: document
-  path: source/pages/homepage.md
+  path: source/pages/homepage.html
   label: Home
 upload_dir: uploads
 public_path: "/uploads"

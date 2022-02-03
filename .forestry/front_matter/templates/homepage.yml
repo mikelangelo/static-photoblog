@@ -7,15 +7,5 @@ fields:
   type: text
   config:
     required: false
-  label: Page Title
-  description: test page title
-- name: homeDescription
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: false
-    schema:
-      format: markdown
-  label: Home Description
-  description: Summary of homepage and test field.
+  label: Title
+  description: quick test
