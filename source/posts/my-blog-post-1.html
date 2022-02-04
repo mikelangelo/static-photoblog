@@ -12,9 +12,9 @@ tags:
 
 <h2>{{postTitle}}</h2>
 <p> lorem </p>
-<img src="../../images/{{featuredImage}}" id="img1" />
+<img src="../../images/{{featuredImage}}" />
 <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
-{% getExifData "source/images/{{featuredImage}}" %}
-<p>exifData: </p>
+
+<p>exifData:  {% getExifData "../../images/20061230041211_tangleimg_0216.jpg" %}</p>
 <p>{{postDescription}}</p>
 
