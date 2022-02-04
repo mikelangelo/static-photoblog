@@ -1,7 +1,7 @@
 ---
 layout: layouts/post.njk
-title: "Seagulls"
-postTitle: "Seagulls"
+title: "Seagulls title"
+postTitle: "Seagulls 3"
 postDescription: "This post is about seagulls in New York"
 featuredImage: "20061230041211_tangleimg_0216.jpg"
 date: "1995-06-01"
@@ -11,44 +11,10 @@ tags:
 ---
 
 <h2>{{postTitle}}</h2>
-<img src="../../images/{{featuredImage}}" />
-
+<p> lorem </p>
+<img src="../../images/{{featuredImage}}" id="img1" />
+<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+{% getExifData "source/images/{{featuredImage}}" %}
+<p>exifData: </p>
 <p>{{postDescription}}</p>
 
-<script>
-
-	//const imageDate = tags['DateTimeOriginal'].description;
-	//const unprocessedTagValue = tags['DateTimeOriginal'].value;
-	console.log("LOADING JS");
-	async function imageEXIF() {
-		console.log("load function");
-    try {
-		console.log("try");
-		const img = "../../images/{{featuredImage}}";
-		console.log(img);
-
-        // const tags = await ExifReader.load(img);
-		const tags = await ExifReader.load(img, {includeUnknown: true});
-		console.log(typeof tags);
-
-
-        // The MakerNote tag can be really large. Remove it to lower
-        // memory usage if you're parsing a lot of files and saving the
-        // tags.
-        delete tags['MakerNote'];
-		console.log("TAGS" + tags);
-        // If you want to extract the thumbnail you can use it like
-        // this:
-        //if (tags['Thumbnail'] && tags['Thumbnail'].image) {
-            //const image = document.getElementById('thumbnail');
-            //image.classList.remove('hidden');
-            //image.src = 'data:image/jpg;base64,' + tags['Thumbnail'].base64;
-        //}
-
-        // Use the tags now present in `tags`.
-    } catch (error) {
-        // Handle error.
-    }
-};
-imageEXIF();
-</script>

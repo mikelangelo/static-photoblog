@@ -22,6 +22,8 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addLayoutAlias("post", "source/layouts/post.njk");
 
 
+
+
 	eleventyConfig.addFilter("readableDate", dateObj => {
 		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
 	});
@@ -98,6 +100,16 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addShortcode("dateYear", function() {
 		/* {% dateYear %} */
 		return DateTime.local().toFormat("yyyy");
+	});
+
+
+	// Returns the EXIF data for images in posts.
+	eleventyConfig.addShortcode("getExifData", function(image) {
+		/* {% getExifData "/path/to/image" %} */
+		const bob = "source/images/20061230041211_tangleimg_0216.jpg";
+		const tags = ExifReader.load(bob);
+		//const imageDate = tags['DateTimeOriginal'].description;
+		//const unprocessedTagValue = tags['DateTimeOriginal'].value;
 	});
 
 
