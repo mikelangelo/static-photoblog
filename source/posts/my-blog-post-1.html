@@ -11,10 +11,9 @@ tags:
 ---
 
 <h2>{{postTitle}}</h2>
-<p> lorem </p>
 <img src="../../images/{{featuredImage}}" />
-<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
 
-<p>exifData:  {% getExifData "../../images/20061230041211_tangleimg_0216.jpg" %}</p>
+<p>{% getExifData "source/images/20061230041211_tangleimg_0216.jpg" %}</p>
+{# <p>testing: {% exifTags.lens %}</p> #}
 <p>{{postDescription}}</p>
 

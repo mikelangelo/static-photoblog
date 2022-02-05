@@ -104,13 +104,39 @@ module.exports = function(eleventyConfig) {
 
 
 	// Returns the EXIF data for images in posts.
-	eleventyConfig.addShortcode("getExifData", function(image) {
+	eleventyConfig.addAsyncShortcode("getExifData", async function(image) {
 		/* {% getExifData "/path/to/image" %} */
-		const bob = "source/images/20061230041211_tangleimg_0216.jpg";
-		const tags = ExifReader.load(bob);
+		const exifData = await ExifReader.load(image);
+		// console.log(JSON.stringify(exifData));
+		let exifTags = {
+			camera: exifData.Model.value,
+			shutterSpd: exifData.ExposureTime.value,
+			fStop: exifData.FNumber.value,
+			iso: exifData.ISOSpeedRatings.value["value"].value,
+			expBias: exifData.ExposureBiasValue.value,
+			flash: exifData.Flash.value.Fired.value,
+			focalLength: exifData.FocalLength.value,
+			lens: exifData.Lens.value,
+			dateAndTime: exifData.DateTimeOriginal.description
+		}
+		// return JSON.stringify(exifTags);
+		// return exifTags;
+
+		return `<h4>EXIF</h4>
+				<p>
+				${exifTags.camera}<br/>
+				${exifTags.shutterSpd}<br/>
+				${exifTags.fStop}<br/>
+				${exifTags.iso}<br/>
+				${exifTags.flash}<br/>
+				${exifTags.focalLength}<br/>
+				${exifTags.lens}<br/>
+				${exifTags.dateAndTime}
+				</p>`;
 		//const imageDate = tags['DateTimeOriginal'].description;
 		//const unprocessedTagValue = tags['DateTimeOriginal'].value;
 	});
+
 
 
 	// Returns a bootstrap icon
