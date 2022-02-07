@@ -104,7 +104,7 @@ module.exports = function(eleventyConfig) {
 
 
 	// Returns the EXIF data for images in posts.
-	eleventyConfig.addAsyncShortcode("getExifData", async function(image) {
+	eleventyConfig.addNunjucksAsyncFilter("filterExifData", async function(image, callback) {
 		/* {% getExifData "/path/to/image" %} */
 		const exifData = await ExifReader.load(image);
 		// console.log(JSON.stringify(exifData));
@@ -112,29 +112,36 @@ module.exports = function(eleventyConfig) {
 			camera: exifData.Model.value,
 			shutterSpd: exifData.ExposureTime.value,
 			fStop: exifData.FNumber.value,
-			iso: exifData.ISOSpeedRatings.value["value"].value,
-			expBias: exifData.ExposureBiasValue.value,
+			iso: exifData.ISOSpeedRatings.description,
 			flash: exifData.Flash.value.Fired.value,
 			focalLength: exifData.FocalLength.value,
-			lens: exifData.Lens.value,
-			dateAndTime: exifData.DateTimeOriginal.description
+			lens: exifData.Lens.value
 		}
 		// return JSON.stringify(exifTags);
 		// return exifTags;
 
-		return `<h4>EXIF</h4>
-				<p>
-				${exifTags.camera}<br/>
-				${exifTags.shutterSpd}<br/>
-				${exifTags.fStop}<br/>
-				${exifTags.iso}<br/>
-				${exifTags.flash}<br/>
-				${exifTags.focalLength}<br/>
-				${exifTags.lens}<br/>
-				${exifTags.dateAndTime}
-				</p>`;
+		// return `<h4>EXIF</h4>
+		// 		<p>
+		// 		${exifTags.camera}<br/>
+		// 		${exifTags.shutterSpd}<br/>
+		// 		${exifTags.fStop}<br/>
+		// 		${exifTags.iso}<br/>
+		// 		${exifTags.flash}<br/>
+		// 		${exifTags.focalLength}<br/>
+		// 		${exifTags.lens}
+		// 		</p>`;
 		//const imageDate = tags['DateTimeOriginal'].description;
 		//const unprocessedTagValue = tags['DateTimeOriginal'].value;
+		callback(null, exifTags);
+	});
+
+// FILTERS FOR PHOTODATA
+	eleventyConfig.addFilter("formatFStop", function(fStop){
+		let array = fStop.split("/");
+		let cleanedData = array.map(item => Number(item));
+		let calculatedValue = cleanedData[0] / cleanedData[1];
+		calculatedValue = Math.round(calculatedValue * 100) / 100;
+		return "f/" + calculatedValue;
 	});
 
 
