@@ -108,7 +108,6 @@ module.exports = function(eleventyConfig) {
 		/* {% getExifData "/path/to/image" %} */
 		// const exifData = await ExifReader.load(image);
 		const exifData = await ExifReader.load("source/images/20050415204325_img_0880.jpg");
-		// console.log("test");
 		// console.log(JSON.stringify(exifData));
 		let exifTags = ("Model" in exifData) ?
 			{
@@ -120,7 +119,8 @@ module.exports = function(eleventyConfig) {
 				focalLength: exifData.FocalLength.value,
 				lens: exifData.Lens.value
 			}
-		:  {
+			:  
+			{
 				camera: "Canon",
 				shutterSpd: "--",
 				fStop: "--",
@@ -128,14 +128,9 @@ module.exports = function(eleventyConfig) {
 				flash: "--",
 				focalLength: "--",
 				lens: "--"
-			}
-		
+			}		
 		// console.log(exifTags);
 		// console.log(JSON.stringify(exifTags));
-		// return exifTags;
-
-		//const imageDate = tags['DateTimeOriginal'].description;
-		//const unprocessedTagValue = tags['DateTimeOriginal'].value;
 		callback(null, exifTags);
 	});
 
