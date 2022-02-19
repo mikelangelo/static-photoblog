@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2008-01-08"
+title: "Hummingbird"
+postTitle: "Hummingbird"
+postDescription: "This is a hummingbird from the hummingbird exhibit at the Desert Museum in Tucson, AZ (<a href=\"www.desertmuseum.org/\">www.desertmuseum.org/</a>). this is my first and ONLY good shot of a hummingbird in flight... and I got it by pure luck!!"
+featuredImage: "20071227132002_img_74312007-12-24.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

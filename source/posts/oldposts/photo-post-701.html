@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2009-05-14"
+title: "Hero and Haley strike a pose.."
+postTitle: "Hero and Haley strike a pose.."
+postDescription: "This is another shot that I think works well for these two pups. I can't remember if this was before or after they were all riled up in the previous post. But they often will lay down near each other and 'keep watch.' They're good like that. \r\n\r\n(Edit: Updated photo)"
+featuredImage: "20090510202116_herohaley132.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

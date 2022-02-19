@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2007-09-14"
+title: "BBAAaaaaaaaa...."
+postTitle: "BBAAaaaaaaaa...."
+postDescription: "This is a sheep from Cline Creek Farm. It's an 1890's working farm. It's part of the DuPage County Forest Preserve. They have a well known sheep breeding stock. Here's one of them poking his head out a smidge. "
+featuredImage: "20070914150232_img_4981.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

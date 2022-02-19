@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2009-05-29"
+title: "Derelict"
+postTitle: "Derelict"
+postDescription: "Near my wife's work is a farm that has an old dragline shovel sitting out near the road. It's very cool. I had to stop and take photos today. I've got a few of these and they will be posted over the next several days. \r\n\r\nI've also started to play with the processing methods I use in Aperture. Let me know what you think and thanks for looking!"
+featuredImage: "20090524015004_derelict170.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

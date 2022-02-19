@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2008-01-06"
+title: "Sunset Moon"
+postTitle: "Sunset Moon"
+postDescription: "I thought the moon in Tucson just looked marvelous!!!"
+featuredImage: "20071227131707_img_71192007-12-22.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

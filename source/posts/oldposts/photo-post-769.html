@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2011-01-07"
+title: "Arizona Mountain Sunrise"
+postTitle: "Arizona Mountain Sunrise"
+postDescription: "While in Arizona for Christmas this year, I saw some beautiful sunrises (blessing and curse of kids, sometimes as they seem to not like sleeping in). Every morning I saw a different sunrise. This time, the light was cutting through the morning fog...which, when in Tucson, looks cool because it's not there often. "
+featuredImage: "20110107001458_mountainsunrise.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

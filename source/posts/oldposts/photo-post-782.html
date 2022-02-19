@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2011-05-14"
+title: "Elizabeth"
+postTitle: "Elizabeth"
+postDescription: "This is a close up of my boys' toy \"Elizabeth\". Part of the Thomas & Friends collection. They take them outside and play in the sandbox, play in the rain, drop them in cups of water and all sorts of things. The paint gets chipped and warped. I'm starting to record the wear and tear on their toys...just for fun."
+featuredImage: "20110512083938_elizabeth.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

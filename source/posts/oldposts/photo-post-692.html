@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2009-04-07"
+title: "He flew away..."
+postTitle: "He flew away..."
+postDescription: "Here's the other Turkey Vulture from the other day. This one got skidish when I approached and flew away... sad... he didn't trust me. Thanks for looking."
+featuredImage: "20090404220438_turkeyvulture101.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

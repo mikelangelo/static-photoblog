@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2009-09-08"
+title: "Smiling Sam"
+postTitle: "Smiling Sam"
+postDescription: "Sam is about 2 months old, now. He's now smiling on command i.e., when he's tickled. Playing with portraits of the kids. I have one or two more I'll be posting of Charlie in the next day or so."
+featuredImage: "20090908231732_samsmilingimg_8588.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

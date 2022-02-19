@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2008-11-15"
+title: "Cops on patrol..."
+postTitle: "Cops on patrol..."
+postDescription: "Here was a roaming group of officers. They were serious looking. I've never seen so many police officers in one place....they were everyhere. And I was glad for it. "
+featuredImage: "20081107233133_img_18352008-11-04.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

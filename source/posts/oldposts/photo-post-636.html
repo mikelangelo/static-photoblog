@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2008-03-28"
+title: "St. James Stable"
+postTitle: "St. James Stable"
+postDescription: "This is the interior of one of the stables on the St. James property that is now owned by the Forest Preserve district of DuPage County. As a volunteer at the Danada Equestrian Center, I was fortunate to take part in a tour of the facility as it is being prepared for its Grand Opening this spring on Memorial Day. This building was built around 1931. It's a beautiful barn and I'm really looking forward to its renovation not ony aesthetically but also practically, as I believe it will be used again to house horses. \r\n\r\nI went with the Black and White treatment of this image considering the age and condition of the building. Once it is renovated, I hope to revisit it and take another similar shot that I hope to share in full color. "
+featuredImage: "20080328133112_img_8163.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

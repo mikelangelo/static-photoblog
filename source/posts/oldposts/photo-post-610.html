@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2007-12-06"
+title: "Jungle Gym Charlie"
+postTitle: "Jungle Gym Charlie"
+postDescription: "Here's Charlie... one of the very few photos we have of him smiling! He's in his 'jungle gym' on the floor. "
+featuredImage: "20071203122113_img_66192007-11-27.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2006-05-24"
+title: "Little Head Shake"
+postTitle: "Little Head Shake"
+postDescription: "Here's Sam and Meg at the &lt;a href=&quot;http://www.danada.info&quot;&gt;Danada Equestrian Center&lt;/a&gt; the other day. Sunny, but rainy at the same time. Some fun lighting! I cought Meg in Mid-Head shake with this shot."
+featuredImage: "20060518175919_crw_1803.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

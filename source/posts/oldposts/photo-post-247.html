@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-10-15"
+title: "Fall Pumpkins"
+postTitle: "Fall Pumpkins"
+postDescription: "Fall is a comin'."
+featuredImage: "20051015000532_crw_6972 copy.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

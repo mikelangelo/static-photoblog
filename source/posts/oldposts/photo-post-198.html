@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-09-02"
+title: "Airport"
+postTitle: "Airport"
+postDescription: "Here's where my wife and I were waiting at the airport in Tucson, AZ. That's our plane."
+featuredImage: "20050902000805_crw_5766 copy.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

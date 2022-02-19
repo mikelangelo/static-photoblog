@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2006-04-19"
+title: "Growth..."
+postTitle: "Growth..."
+postDescription: "Not sure how this part of a tree managed to grow around this cable...but I thought it an interesting subject. "
+featuredImage: "20060410215510_crw_0981.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

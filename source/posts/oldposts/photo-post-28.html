@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-04-18"
+title: "Fenceline Again"
+postTitle: "Fenceline #?"
+postDescription: "yep... I like fences.... (Grey Horse Farm, Brimfield, IL 4-17-05)"
+featuredImage: "20050418221942_img_1723.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

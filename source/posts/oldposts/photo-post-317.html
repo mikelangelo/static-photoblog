@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-12-26"
+title: "Meep Meep"
+postTitle: "Meep Meep"
+postDescription: "This is a Roadrunner from the Desert Museum in Tucson, Arizona. They have a free flight raptor demonstrations. We witnessed some behaviors of roadrunners, Barn owls, andFerruginnous Hawks."
+featuredImage: "20051226104248_crw_8783.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

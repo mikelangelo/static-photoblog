@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2006-02-24"
+title: "Seeds"
+postTitle: "Seeds"
+postDescription: "I call this one 'Seeds' because I haven't a clue what tree they're from, what they're called or anything. If/when I find out, I'll update the title appropriately.\r\n\r\n"
+featuredImage: "20060224083858_crw_9564.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

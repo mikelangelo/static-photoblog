@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-08-30"
+title: "Lizard"
+postTitle: "Lizard"
+postDescription: "Nifty little lizard on Picacho Peak trail. We saw many lizards. Dang, they're fast!!! "
+featuredImage: "20050830003159_crw_5659 copy.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

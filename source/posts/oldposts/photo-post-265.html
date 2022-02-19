@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-11-04"
+title: "PhotoFriday: Warmth"
+postTitle: "PhotoFriday: Warmth"
+postDescription: "Well... warm colors anyway. (&lt;a href=&quot;http://www.photofiday.com&quot;&gt;Photo friday&lt;/a&gt; submission for 'Warmth.')"
+featuredImage: "20051104004326_crw_7297.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

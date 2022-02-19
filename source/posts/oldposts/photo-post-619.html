@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2007-12-31"
+title: "Saguaro"
+postTitle: "Saguaro"
+postDescription: "This is one of the amazing Saguaro Cacti in the American Southwest. Each one is very unique."
+featuredImage: "20071227130900_img_68272007-12-19.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

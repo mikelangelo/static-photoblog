@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2006-09-01"
+title: "Bees..."
+postTitle: "Bees..."
+postDescription: "I went for a walk around a local forest preserve and these guys were going nuts on this bush. There had to be dozens of bees, wasps, flies and all sorts of varying critters! The light was good. I had my macro lens...and I spend about 20 minutes just getting shots on this bush. The worst part was the wind... couldn't focus on the bees or the bush when the branches are all moving on you. I did get a handful I'm happy with, tho'. "
+featuredImage: "20060831203831_img_5848.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

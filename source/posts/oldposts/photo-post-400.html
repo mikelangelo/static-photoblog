@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2006-04-16"
+title: "Mossy Macro"
+postTitle: "Mossy Macro"
+postDescription: "This is a short series of some macro shots. Haven't really been able to experiment with macro, yet...this is only a test. "
+featuredImage: "20060410215213_crw_0960.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

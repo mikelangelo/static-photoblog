@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2007-03-20"
+title: "Moss"
+postTitle: "Moss"
+postDescription: "Went for a walk in the local forest preserve the other day with my wife and my dog (Julie and Hero, respectively). Didn't see much interesting as spring hasn't quite gotten to us, yet...bu the sun hit this moss very nicely this day as it was setting.\r\n\r\nI'm playing with Photoshop CS3, and the save settings I'm used to weren't there, so I apologize if the EXIF data isn't posted to the left. Just in case, I believe I shot this at about F/5.6 with a shutter speed of about 1/250. I used my Tamron 28-75 F/2.8 lens. No Flash."
+featuredImage: "20070320033030_mossimg_0585.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

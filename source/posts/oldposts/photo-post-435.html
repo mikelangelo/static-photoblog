@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2006-05-22"
+title: "Purple Macro"
+postTitle: "Purple Macro"
+postDescription: "Took a walk with Julie this evening. Started raining just as I started taking pics of some flowers. The next few shots were handheld, so I'm not crazy about the sharpness of these shots...but they're fun anyway. I'm still learning some tricks with the macro lens."
+featuredImage: "20060513203927_crw_1786.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

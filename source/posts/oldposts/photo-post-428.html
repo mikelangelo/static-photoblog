@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2006-05-15"
+title: "Construction #1"
+postTitle: "Construction #1"
+postDescription: "There is a Forest Preserve near us, Windfield Mounds, that has construction happening on the property. It's unfortunate as the land is surrounded by beautiful forest. Right now, there's a row of earth movers out on the land wiping away the prairie grasses. "
+featuredImage: "20060513194024_crw_1724.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

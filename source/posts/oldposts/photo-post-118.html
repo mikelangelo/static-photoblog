@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-06-18"
+title: "Blue moon...."
+postTitle: "Blue moon...."
+postDescription: ""
+featuredImage: "20050618155255_crw_4094 copy.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2009-05-11"
+title: "Charlie on the move..."
+postTitle: "Charlie on the move..."
+postDescription: "Charlie has been able to spend a bunch of time in our backyard, lately. The weather has been very nice. Here's him walking back toward the house... not really sure what's on his mind. But, then... I never know what's on his mind... unless he's hungry. Then I know what's on his mind."
+featuredImage: "20090510201635_charliebackyard113.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

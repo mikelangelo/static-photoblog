@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-11-10"
+title: "McKee Marsh #2"
+postTitle: "McKee Marsh #2"
+postDescription: ""
+featuredImage: "20051110113946_crw_7666 copy.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

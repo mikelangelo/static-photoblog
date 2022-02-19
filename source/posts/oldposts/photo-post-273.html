@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-11-13"
+title: "Museum of Science and Industry #3"
+postTitle: "Museum of Science and Industry #3"
+postDescription: "This is the last one in this series. \r\n\r\nMy buddy and I went to the museum of Science and Industry today to attend a &quot;Just Show Me&quot; seminar on Digital photography Workflow. We got there early, so we walked around and took a few pics.\r\n\r\nCheck out &lt;a href=&quot;http://rdh.smugmug.com/gallery/971154/1/44740670&quot;&gt;this site&lt;/a&gt;."
+featuredImage: "20051113232620_crw_7727 copy.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

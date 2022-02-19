@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2009-06-04"
+title: "The L from the parking garage"
+postTitle: "The L from the parking garage"
+postDescription: "Here's looking down on the L in the last shot in this series from the parking garage. The post processing took a weird feel on this series... I'll try something different next time."
+featuredImage: "20090524151643_l171.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

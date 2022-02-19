@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2007-08-19"
+title: "Engine #8385"
+postTitle: "Engine #8385"
+postDescription: "Here's another shot of the Minneapolis in action...well...the piston, at least."
+featuredImage: "20070818213046_img_4418.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

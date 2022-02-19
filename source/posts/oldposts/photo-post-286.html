@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-12-01"
+title: "Pumpkin#1"
+postTitle: "Pumpkin#1"
+postDescription: "I really like the top of the pumpkin that my wife got me for halloween. I'll be posting some more pics of this pumpkin as I'm 'exploring' it. ;-)"
+featuredImage: "20051201123341_crw_8066.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

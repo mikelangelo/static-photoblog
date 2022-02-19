@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2012-06-26"
+title: "Woman"
+postTitle: "Woman"
+postDescription: "My friend makes jewelry and this is one of her pieces. I believe this is supposed to represent the Chinese character representing \"woman\". "
+featuredImage: "20120625012710_woman.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

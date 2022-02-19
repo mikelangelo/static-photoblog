@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-12-02"
+title: "Spreader Blades"
+postTitle: "Spreader Blades"
+postDescription: "These are the teeth/blades on the back of a manuer spreader at the barn where my wife works. It was very cold this afternoon... in the teens I would say... so I didn't stay long to get a better shot. I kinda' like this one though. No post processing outside of a touch of conttrast. Maybe I should have added a little more contrast. ... oh well. "
+featuredImage: "20051202223420_crw_8076.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

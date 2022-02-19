@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2007-10-14"
+title: "Feeding Time..."
+postTitle: "Feeding Time..."
+postDescription: "This is my Nephew, Ernie (almost 6), and my niece, Emaline (4), feeding Charles. They were naturals. Julie's sister, Jane, came up to visit with her kids Isabell, Ernie, and Emaline. We had a marvelous day and went out to the Morton Arboretum right after this feeding. Charles slept through the afternoon until we went to KFC... then he was... upset. But...nothing another bottle couldn't fix. ;)"
+featuredImage: "20071014182457_img_5518.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2006-06-07"
+title: "Big Daddy #1"
+postTitle: "Big Daddy #1"
+postDescription: "Julie and I went for a walk in the woods the other day. The plants along the path had these guys all over the place. Wish I had my tripod. "
+featuredImage: "20060531095030_crw_2103.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

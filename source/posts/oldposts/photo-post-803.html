@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2012-06-23"
+title: "Barn Dog Zach"
+postTitle: "Barn Dog Zach"
+postDescription: "This is Zach. One of two cool barn dogs that I met a few weeks ago. He's a sweetheart and is an excellent mole hunter!"
+featuredImage: "20120623091331_barnzach.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

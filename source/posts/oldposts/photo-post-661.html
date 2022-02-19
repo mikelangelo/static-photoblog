@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2008-10-14"
+title: "Megan"
+postTitle: "Megan"
+postDescription: "This is Meg. Belgian Draft at the Danada Equestrian Center's Fall Festival, 2008."
+featuredImage: "20081013094257_img_14892008-10-12.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2006-03-24"
+title: "cacti"
+postTitle: "cacti"
+postDescription: "Some small cactus plants I brought back from Arizona and are now safetly in my office."
+featuredImage: "20060324230318_crw_9910.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

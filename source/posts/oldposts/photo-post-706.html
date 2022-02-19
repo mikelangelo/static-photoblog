@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2009-05-26"
+title: "Safety First"
+postTitle: "Safety First"
+postDescription: "Charlie LOVES tractors. Any chance he gets, he'll just sit on them and try and pull the levers/switches. Here, he's demonstrating proper use of ear protection. "
+featuredImage: "20090524014436_charlietractor163.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

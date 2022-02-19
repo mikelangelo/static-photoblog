@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-10-09"
+title: "Ferrier's Hammer"
+postTitle: "Ferrier's Hammer"
+postDescription: "This here is a ferrier, Mike Born, who is providing a demonstration for visitors at the &lt;a href=&quot;http://www.danada.info&quot;&gt;Danada Equestrian Center's&lt;/a&gt; annual Fall Festival. He's a super nice guy with some amazing skills!! He can make anything from a horseshoe!!"
+featuredImage: "20051009231640_crw_6829.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

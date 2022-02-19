@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2009-02-10"
+title: "Home @ Night"
+postTitle: "Home @ Night"
+postDescription: "I came home last night around 11pm and it was a beautiful evening with fog on the road, warm and pleasant. Considering it was early February, I decided to try my hand at a few night shots. The moon was intensely bright and the clouds were moving quickly. "
+featuredImage: "20090210165340_homenight077.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

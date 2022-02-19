@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2012-06-25"
+title: "Dead Flower"
+postTitle: "Dead Flower"
+postDescription: "Found this flower from my wife's garden. I thought the colors and textures were really rich. Almost velvet-like in some ways. "
+featuredImage: "20120625012559_deadflower.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

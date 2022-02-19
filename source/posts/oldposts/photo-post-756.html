@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2010-03-08"
+title: "You should see the OTHER guy!"
+postTitle: "You should see the OTHER guy!"
+postDescription: "This is one of the barn cats where my wife keeps her horse. He's been in a scrap or two... "
+featuredImage: "20100308110724_barncat_mg_1365.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

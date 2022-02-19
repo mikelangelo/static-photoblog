@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2007-06-20"
+title: "Cicada #3: Are you talkin' to ME?!"
+postTitle: "Cicada #3: Are you talkin' to ME?!"
+postDescription: "This is the last Cicada shot I'll post for now. I think he's about ready to karate chop my camera... I think he was getting annoyed at my presence. All he wanted was to find a nice girl and settle down for a couple days before dying of old age... and here I was 'cramping' his style!"
+featuredImage: "20070616140943_img_2335.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

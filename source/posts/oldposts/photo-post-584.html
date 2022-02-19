@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2007-08-22"
+title: "Pitchfork Cliche'"
+postTitle: "Pitchfork Cliche'"
+postDescription: "yeah, yeah.. slightly cliche... but when there is wheat/straw and a pitchfork, I think there's some obscure law in some obscure town in a forgotten area of Arkansas. I'm sure there is. I think I heard about it on the History channel. "
+featuredImage: "20070818213548_img_4223.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

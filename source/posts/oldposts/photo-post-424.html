@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2006-05-04"
+title: "Yellow and White"
+postTitle: "Yellow and White"
+postDescription: "The reason I took this photo was because it was fairly dark outside and it was lit from below by an outdoor light that had an interesting bluish cast. "
+featuredImage: "20060503223933_crw_1292.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

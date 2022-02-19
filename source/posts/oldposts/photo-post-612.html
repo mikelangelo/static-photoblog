@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2007-12-08"
+title: "Charlie Horse"
+postTitle: "Charlie Horse"
+postDescription: "Charlie got his very first (early) Christmas present this year from his Nana down in Texas. Since we're leaving to visit my wife's family in AZ this year, any gifts we get early we'll open before we leave...so...here's Charlie's first. He doesn't smile much yet...but he does have his moments. You'll see a nicer one tomorrow... thank God for burst mode on my camera!!"
+featuredImage: "20071204110440_img_66662007-12-02.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2006-07-26"
+title: "Amelia #1"
+postTitle: "Amelia #1"
+postDescription: "My friends asked me to take photos of their daughter, Amelia. She's about 7 months old in these photos. I'll post about 3 of my favorites. "
+featuredImage: "20060726100518_crw_2753.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

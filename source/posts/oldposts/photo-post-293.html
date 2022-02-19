@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-12-06"
+title: "Tree with berries..."
+postTitle: "Tree with berries..."
+postDescription: "This was taken at the Morton Arboretum. Yes... it's branch with berries. Yes... I should have written down the name of the tree.. (they're ALL labeled)..but I forgot. So... it's a tree with berries. ;)"
+featuredImage: "20051206223336_crw_8114.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

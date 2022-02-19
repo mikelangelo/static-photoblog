@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2008-06-01"
+title: "Ike"
+postTitle: "Ike"
+postDescription: "A new foal arrived this past week at the <a href=\"http://www.danada.info\">Danada Equestrian Center</a>. June gave birth to Ike. Cute little booger. "
+featuredImage: "20080601010702_img_93562008-05-30.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2007-06-16"
+title: "Cicada Shell"
+postTitle: "Cicada Shell"
+postDescription: "Well.. the Cicadas are out. I went to the Morton Arboretum the other day (http://www.mortonarb.org/) to see them. It sounds like I'm surrounded by armies of chainsaw-wielding insects. There were so many it was deafening. When I arrived, I could hear them...but I couldn't see them... not really anyway. As I began walking through the arboretum, I followed the noise. \r\n\r\nI started looking on a large tree where I saw the first 'empty shell'. As I began to photograph it, I noticed something move on the trunk. It was the first live cicada that I saw... then I saw another and another. The next tree I went to, it was the same thing. A Cicada here. A Cicada there. Then, I took a step back... OMG...every leaf on that tree had several empty cicada shell/exosckeleton on it...there were thousands... I just couldn't 'see' them at first. Then, I stopped and began looking... the tree was 'moving'...there were thousands and thousands of them... it was amazing!!\r\n\r\nI'll beposting a few more shots of Cicadas over the next few days. Thanks for looking!!"
+featuredImage: "20070616140534_img_2105.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

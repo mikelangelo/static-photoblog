@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2011-04-08"
+title: "Nice Light"
+postTitle: "Nice Light"
+postDescription: "I thought this is light was just stunning. Still working on processing it to try and get even close to what the sun provides. But i've always just loved sunlight on a rain-cloudy day. The contrast is always just plain cool. "
+featuredImage: "20110408133719_suncloudsimg_7367.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

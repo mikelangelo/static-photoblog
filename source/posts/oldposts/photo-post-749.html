@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2009-11-30"
+title: "Boot to the head..."
+postTitle: "Boot to the head..."
+postDescription: "Sam laughs like crazy when you kick him in the head with his own foot... hence... \"boot to the head...\""
+featuredImage: "20091130000715_samboottotheheadimg_9534.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2010-01-25"
+title: "SPAM"
+postTitle: "SPAM"
+postDescription: "ok... so I LOVE SPAM. The only thing that might be better is bacon! BUT... it's not really healthy, so I don't get it often. Which is probably why I happen to still like SPAM...because I don't eat it often. Anyway, to commemorate the most recent sacrifice to the gods of obesity, I decided to immortalize the last can of SPAM that I had. I've been saving this thing for weeks...now that I've photographed it... i can move on to bigger and better things... such as the aforementioned Bacon! Thanks for looking."
+featuredImage: "20100125230716_spamimg_0494.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

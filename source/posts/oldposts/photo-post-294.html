@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-12-08"
+title: "Jeremiah"
+postTitle: "Jeremiah"
+postDescription: "This picture of our Manx cat, Jeremiah was taken earlier this year...I stumbled on it and decided to post it."
+featuredImage: "20051208212519_jerehiahimg_2883.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

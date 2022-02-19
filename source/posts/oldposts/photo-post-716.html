@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2009-06-05"
+title: "Charlie's Horse Conversation"
+postTitle: "Charlie's Horse Conversation Continued.."
+postDescription: "We're back at Cosley zoo and charlie's talkin' to his old buddy, the american draft horse again. They have lovely conversations."
+featuredImage: "20090525131223_charliehorse176.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

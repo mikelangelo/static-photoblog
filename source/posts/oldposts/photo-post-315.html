@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-12-25"
+title: "Agave Cactus"
+postTitle: "Agave Cactus"
+postDescription: "This Agave cactus was taken at the &lt;a href=&quot;http://www.desertmuseum.org&quot;&gt;Desert Museum&lt;/a&gt; in Tucson, AZ. "
+featuredImage: "20051225131512_crw_8754.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

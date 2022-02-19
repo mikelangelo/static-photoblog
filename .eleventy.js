@@ -106,42 +106,53 @@ module.exports = function(eleventyConfig) {
 	// Returns the EXIF data for images in posts.
 	eleventyConfig.addNunjucksAsyncFilter("filterExifData", async function(image, callback) {
 		/* {% getExifData "/path/to/image" %} */
-		const exifData = await ExifReader.load(image);
+		// const exifData = await ExifReader.load(image);
+		const exifData = await ExifReader.load("source/images/20050415204325_img_0880.jpg");
+		// console.log("test");
 		// console.log(JSON.stringify(exifData));
-		let exifTags = {
-			camera: exifData.Model.value,
-			shutterSpd: exifData.ExposureTime.value,
-			fStop: exifData.FNumber.value,
-			iso: exifData.ISOSpeedRatings.description,
-			flash: exifData.Flash.value.Fired.value,
-			focalLength: exifData.FocalLength.value,
-			lens: exifData.Lens.value
-		}
-		// return JSON.stringify(exifTags);
+		let exifTags = ("Model" in exifData) ?
+			{
+				camera: exifData.Model.value,
+				shutterSpd: exifData.ExposureTime.value,
+				fStop: exifData.FNumber.value,
+				iso: exifData.ISOSpeedRatings.description,
+				flash: exifData.Flash.value.Fired.value,
+				focalLength: exifData.FocalLength.value,
+				lens: exifData.Lens.value
+			}
+		:  {
+				camera: "Canon",
+				shutterSpd: "--",
+				fStop: "--",
+				iso: "--",
+				flash: "--",
+				focalLength: "--",
+				lens: "--"
+			}
+		
+		// console.log(exifTags);
+		// console.log(JSON.stringify(exifTags));
 		// return exifTags;
 
-		// return `<h4>EXIF</h4>
-		// 		<p>
-		// 		${exifTags.camera}<br/>
-		// 		${exifTags.shutterSpd}<br/>
-		// 		${exifTags.fStop}<br/>
-		// 		${exifTags.iso}<br/>
-		// 		${exifTags.flash}<br/>
-		// 		${exifTags.focalLength}<br/>
-		// 		${exifTags.lens}
-		// 		</p>`;
 		//const imageDate = tags['DateTimeOriginal'].description;
 		//const unprocessedTagValue = tags['DateTimeOriginal'].value;
 		callback(null, exifTags);
 	});
 
-// FILTERS FOR PHOTODATA
+	// FILTERS FOR PHOTODATA
 	eleventyConfig.addFilter("formatFStop", function(fStop){
 		let array = fStop.split("/");
 		let cleanedData = array.map(item => Number(item));
 		let calculatedValue = cleanedData[0] / cleanedData[1];
 		calculatedValue = Math.round(calculatedValue * 100) / 100;
-		return "f/" + calculatedValue;
+		// console.log(calculatedValue);
+		if (isNaN(calculatedValue)){
+			// console.log("1");
+			return "--";
+		}else{
+			// console.log("2");
+			return "f/" + calculatedValue;
+		}
 	});
 
 

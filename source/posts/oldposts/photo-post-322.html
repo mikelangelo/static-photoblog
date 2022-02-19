@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-12-29"
+title: "Hawkeye"
+postTitle: "Hawkeye"
+postDescription: "Here's the last of the raptors from the Desert Museum's Raptor demonstration that I'm going to post. I was able to get a nice close-up so I had to post it. "
+featuredImage: "20051229104054_crw_8901.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

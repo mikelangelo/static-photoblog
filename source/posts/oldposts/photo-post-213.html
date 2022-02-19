@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-09-08"
+title: "yellow flower #46349590"
+postTitle: "yellow flower #46349590"
+postDescription: "yep. It's another yellow flower. I can't help but to take pictures of flowers.... they don't move!! it's so easy. ;-) But... I just ordered a new Macro Lens. So hopefully, I'll have some MARVELOUS close ups of bugs and flowers and kitty-cats, etc. to post. "
+featuredImage: "20050908224240_crw_5815 copy.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-09-08"
+title: "Cindy Sheehan"
+postTitle: "Cindy Sheehan"
+postDescription: "Cindy Sheehan, speaking in Wheaton, IL. This was taken on September 7th at a local peace rally. "
+featuredImage: "20050908163528_crw_5994 copy.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

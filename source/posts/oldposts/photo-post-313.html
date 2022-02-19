@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-12-24"
+title: "Santa Catalinas"
+postTitle: "Santa Catalinas"
+postDescription: "This was taken at the top of Mt. Lemon in Tucson, AZ. If you EVER get the opportunity to go hiking on or near mountains... don't pass it up and DON'T forget your camera!"
+featuredImage: "20051224202645_crw_8674.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

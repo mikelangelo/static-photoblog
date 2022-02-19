@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2006-12-04"
+title: "Winter at Danada"
+postTitle: "Winter at Danada"
+postDescription: "This was from the first big snow at Danada this year."
+featuredImage: "20061204024135_danadasnowimg_9059.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

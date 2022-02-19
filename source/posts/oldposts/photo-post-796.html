@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2012-05-05"
+title: "little flower"
+postTitle: "little flower"
+postDescription: "I don't remember where I was in the house, but I found this small, sad looking flower/twig. Someone obviously brought it in the house unknowingly. It is very small. each flower is maybe .25cm in diameter. For some reason it just caught my eye and I decided to make it look bigger.\r\n\r\nThanks for looking. "
+featuredImage: "20120505084748_little flower.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

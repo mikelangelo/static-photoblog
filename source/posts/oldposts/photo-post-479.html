@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2006-07-24"
+title: "safety lines"
+postTitle: "safety lines"
+postDescription: "The same fire/rescue exercises. These are the safety lines on shore."
+featuredImage: "20060723163030_crw_1450.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2012-04-29"
+title: "Fly"
+postTitle: "Fly"
+postDescription: "It was cold and rainy today. Happened to come across this guy trying to stay safe on a small bush by our back door. Since it was so cold, he was kind enough to sit through me taking photos for a few minutes. "
+featuredImage: "20120429225733_fly.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

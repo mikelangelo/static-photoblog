@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2008-11-16"
+title: "Obama Hairdo"
+postTitle: "Obama Hairdo"
+postDescription: "Not only is this a true sign of support for Obama... but it was done really well. Sharp lines. Good color. It was well done. I also have to admit.. she had much nicer photography equipment than I have... I admit.. i was jealous. "
+featuredImage: "20081107233312_img_18422008-11-04.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

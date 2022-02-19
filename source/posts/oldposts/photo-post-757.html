@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2010-03-09"
+title: "Laughing Charlie"
+postTitle: "Laughing Charlie"
+postDescription: "Julie and I took Sam and Charlie to the Morton Arboretum yesterday. We went to the restaurant there for lunch. Charlie was being goofy."
+featuredImage: "20100308110900_charlielaugh_mg_1439.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

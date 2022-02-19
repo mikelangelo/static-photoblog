@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2008-11-13"
+title: "Head of the line... "
+postTitle: "Head of the line... "
+postDescription: "This crowd was very happy and exuberant and were very excited to get into the venue to get a glimpse of the man of the day. \r\n\r\nAgain... at this point, it was still about 3pm.. not a single return had been announced yet as the polls were still open. Everyone just seemed to know it was time for a change."
+featuredImage: "20081107232811_img_17932008-11-04.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

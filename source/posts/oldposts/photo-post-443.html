@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2006-05-28"
+title: "Orchid#1"
+postTitle: "Orchid#1"
+postDescription: "I started playing with a small lightbox I got and a couple of halogen lights. What do you think? I'm not too happy with it...but I have a lot to learn, yet. For a first try of using controlled light, it's ok, I guess. I didn't use a flash."
+featuredImage: "20060518180258_crw_1919.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

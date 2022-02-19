@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2007-05-02"
+title: "Mike's Right Brain"
+postTitle: "Mike's Right Brain"
+postDescription: "This is Mike from Mike's Right Brain (&lt;a href=&quot;http://www.mikesrightbrain.com/&quot;&gt;http://www.mikesrightbrain.com/&lt;a&gt;) setting up to take a shot that I'm in the middle of... before I got out of the way... I had to take his picture... yes... I'm a photo-nerd... "
+featuredImage: "20070501131729_img_1249 (1).jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

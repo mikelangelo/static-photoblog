@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2006-03-08"
+title: "Sam's Eye"
+postTitle: "Sam's Eye"
+postDescription: "Since Sam was being so nice and not moving, I thought I would try to get a better close up of his eye. Apparantly, I was having some minor difficulties regarding the focus...but I like some aspects of this shot. "
+featuredImage: "20060308204501_crw_9742.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

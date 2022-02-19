@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2009-07-08"
+title: "Lurking..."
+postTitle: "Lurking..."
+postDescription: "Ok... here's another close up image using the cheap close-up filter. In my wife's flower garden, I saw this big 'ol spider just lurking... waiting...I never could quite get his head in focus...but I realized...he was supposed to be hiding..so if I was a bug crawling on this plant..this is what I might see before I peed myself and then got eaten by this giant spider. "
+featuredImage: "20090701114255_lurking2183.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

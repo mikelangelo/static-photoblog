@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2007-04-30"
+title: "Out of Contxt"
+postTitle: "Out of Contxt"
+postDescription: "This is Bill Vaccaro from Out of Contxt (&lt;a href=&quot;http://www.outofcontxt.com&quot;&gt;http://www.outofcontxt.com&lt;/a&gt;). I met him at the &lt;a href=&quot;http://northamerica.photobloggers.org/&quot;&gt;North American Photoblogger&lt;/a&gt; Meetup in Chicago this weekend (April 27-29, 2007).It was a great weekend and I'm grateful for all the great photobloggers I got to meet. I'll be posting some more images over the next few days. \r\n\r\nIn this photo Bill is taking Kathleen Connelly's (from &lt;a href=&quot;http://www.durhamtownship.com/index.html&quot;&gt;A Walk Through Durham Township, Pennsylvania&lt;/a&gt;) photograph before we go our separate ways to tour the city."
+featuredImage: "20070430083830_img_1130.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

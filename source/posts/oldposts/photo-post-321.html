@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-12-28"
+title: "Landing"
+postTitle: "Landing"
+postDescription: "Check out this &lt;a href=&quot;http://www.photoflavor.com/index.php?id=308&quot;&gt;shot&lt;/a&gt;. This was one of my attempts at coming close to Zac's (&lt;a href=&quot;http://www.photoflavor.com/&quot;&gt;Photoflavor&lt;/a&gt; Photographer) timing with bird shots."
+featuredImage: "20051228142202_crw_8858.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

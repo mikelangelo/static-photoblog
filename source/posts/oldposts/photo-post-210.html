@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-09-08"
+title: "Smells like wet dog!"
+postTitle: "Smells like wet dog!"
+postDescription: "ok... good story. Julie (my wife) and I were walking Hero at a local forest preserve (Blackwell in DuPage County). We were walking along the edge of Silver lake. She was fine, sniffing the flowers and checking things out...when a duck flew off about 15 feet away from hero in the water. Apparently... a duck taking off is the thing that will make Hero jump in a lake! I WISH I was quicker... it would have been such a great shot to get her as she realized that she jumped into water that was deeper than she was, tall!! \r\n\r\nSo... she jumped... thought 'OH Crap!,' and jumped right back out again. I was at least able to get a pic of her trying to shake it off!! Julie and I almost fell over laughing!!"
+featuredImage: "20050908223655_crw_5809 copy.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

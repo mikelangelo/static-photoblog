@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2006-05-31"
+title: "Shed Roof... sorta.."
+postTitle: "Shed Roof... sorta.."
+postDescription: "This is a close up of that moss/fungus stuff that grows in the woods, 'cept it's on the shingles of the shed in the backyard. "
+featuredImage: "20060531093319_crw_1973.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>

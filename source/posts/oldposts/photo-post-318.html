@@ -1,0 +1,17 @@
+---
+layout: layouts/post.njk
+date: "2005-12-26"
+title: "Spread Owl"
+postTitle: "Spread Owl"
+postDescription: "Here's a Barn Owl that was part of the Raptor Free Flight demonstration at the Desert Museum. I was amazed at how silent this owl was when in flight or landing. Apparently, the feathers are so soft, that they absorb any sound and are virtually silent."
+featuredImage: "20051226181027_crw_8788.jpg"
+---
+
+
+<h2>{{postTitle}}</h2>
+<img src="../../images/{{featuredImage}}" />
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p>EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p>{{postDescription}}</p>
