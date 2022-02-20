@@ -16,4 +16,4 @@ featuredImage: "20071227131106_img_69742007-12-20.jpg"
 {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
 
 <p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
-<p>{{postDescription}}</p>
+<p class="description">{{postDescription}}</p>
