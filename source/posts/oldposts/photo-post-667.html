@@ -9,7 +9,9 @@ featuredImage: "20081105115615_img_17022008-10-26.jpg"
 
 
 <h2>{{postTitle}}</h2>
+<div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
+</div>
 
 {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
 
