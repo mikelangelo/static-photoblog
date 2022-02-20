@@ -2,19 +2,25 @@ body{
 	background-color: #444;
 	font-family: 'century-gothic', 'Vergana', Arial, sans-serif;
 	font-weight: 400;
-	font-style: normal
+	font-style: normal;
+	color: #aaa;
 }
 
 a:link,
 a:visited,
 a:hover,
 a:active{
-	color: #aaa;
+	/* color: #aaa; */
 	text-decoration: none;
 }
-
+/* 
 p{
 	color: #aaa;
+} */
+
+h2{
+	/* color: #aaa; */
+	border-bottom: 1px solid #ccc;
 }
 
 main {

@@ -13,7 +13,7 @@ featuredImage: "20060302080848_crw_9638.jpg"
 <img src="../../images/{{featuredImage}}" />
 </div>
 
-{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
 
-<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
 <p class="description">{{postDescription}}</p>
