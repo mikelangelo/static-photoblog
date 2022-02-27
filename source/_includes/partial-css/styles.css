@@ -1,6 +1,6 @@
 body{
 	background-color: #444;
-	font-family: 'century-gothic', 'Vergana', Arial, sans-serif;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 	font-weight: 400;
 	font-style: normal;
 	color: #aaa;
@@ -13,7 +13,7 @@ a:active{
 	color: #aaa;
 	text-decoration: none;
 }
-/* 
+/*
 p{
 	color: #aaa;
 } */
@@ -33,7 +33,11 @@ main {
 	margin-left: auto;
 	margin-top: auto;
 	text-align: center;
+}
 
+.featuredImage img{
+	width: 100%;
+	max-width: 1024px;
 }
 
 .siteTitle a{

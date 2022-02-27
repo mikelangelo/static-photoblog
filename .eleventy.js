@@ -109,26 +109,15 @@ module.exports = function(eleventyConfig) {
 		// const exifData = await ExifReader.load(image);
 		const exifData = await ExifReader.load("source/images/20050415204325_img_0880.jpg");
 		// console.log(JSON.stringify(exifData));
-		let exifTags = ("Model" in exifData) ?
-			{
-				camera: exifData.Model.value,
-				shutterSpd: exifData.ExposureTime.value,
-				fStop: exifData.FNumber.value,
-				iso: exifData.ISOSpeedRatings.description,
-				flash: exifData.Flash.value.Fired.value,
-				focalLength: exifData.FocalLength.value,
-				lens: exifData.Lens.value
+		let exifTags = {
+				camera: exifData?.Model?.value ? exifData?.Model?.value : "--",
+				shutterSpd: exifData?.ExposureTime?.value ? exifData?.ExposureTime?.value : "--",
+				fStop: exifData?.FNumber?.value ? exifData?.FNumber?.value : "--",
+				iso: exifData?.ISOSpeedRatings?.description ? exifData?.ISOSpeedRatings?.description : "--",
+				flash: exifData?.Flash?.value?.Fired?.value ? exifData?.Flash?.value?.Fired?.value : "--",
+				focalLength: exifData?.FocalLength?.value ? exifData?.FocalLength?.value : "--",
+				lens: exifData?.Lens?.value ? exifData?.Lens?.value : "--"
 			}
-			:  
-			{
-				camera: "Canon",
-				shutterSpd: "--",
-				fStop: "--",
-				iso: "--",
-				flash: "--",
-				focalLength: "--",
-				lens: "--"
-			}		
 		// console.log(exifTags);
 		// console.log(JSON.stringify(exifTags));
 		callback(null, exifTags);

@@ -1,0 +1,14 @@
+
+<h3>Test</h3>
+{% set latestPost = collections.posts | head(-1) %}
+{% set latestPostCounter = collections.posts | length %}
+
+{% for post in latestPost %}
+	<p>content testing
+	{{ post.data.title }}<br>
+	{{ post.date | htmlDateString }}
+	{{ post.data.featuredImage}}
+	</p>
+
+{% endfor %}
+<h3>Test End</h3>
