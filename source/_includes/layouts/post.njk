@@ -9,7 +9,7 @@ permalink: /posts/{{ title|slugURL }}-{{ date|slugURL }}/
 		{{ content | safe }}
 	</div><!-- end spacing -->
 
-		{%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+		{# {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
 		{%- if previousPost %}
 			<div> <a href="{{ previousPost.url | url }}"><< {{ previousPost.data.title }}</a></div>
 		{% endif %}
@@ -17,7 +17,8 @@ permalink: /posts/{{ title|slugURL }}-{{ date|slugURL }}/
 		{%- set nextPost = collections.posts | getNextCollectionItem(page) %}
 		{%- if nextPost %}
 			<div> <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }} >></a> </div>
-		{% endif %}
+		{% endif %} #}
+		{% include 'source/pages/page-components/post-previous-next.njk' %}
 
 </div><!-- end container -->
 
