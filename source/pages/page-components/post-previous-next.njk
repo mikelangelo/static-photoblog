@@ -1,18 +1,17 @@
 <div class="row">
 
-
-
 <div class="mb-5 col ps-5 text-start">
 	{% set postslist = collections.posts | head(-1) %}
 	{% set postslistCounter = collections.posts | length %}
-	{% include "source/pages/page-components/blog-listing-previous.njk" %}
+	{# {% include "source/pages/page-components/blog-listing-previous.njk" %} #}
+	{% include "source/pages/page-components/blog-home-previous.njk" %}
 </div>
 
-<div class="pe-5 mb-5 col text-end">
+{# <div class="pe-5 mb-5 col text-end">
 	{% set postslist = collections.posts | head(+1) %}
 	{% set postslistCounter = collections.posts | length %}
 	{% include "source/pages/page-components/blog-listing-next.njk" %}
-</div>
+</div> #}
 
 </div>
 {# <p>More posts can be found in <a href="{{ '/posts/' | url }}">the blog archive</a>.</p> #}

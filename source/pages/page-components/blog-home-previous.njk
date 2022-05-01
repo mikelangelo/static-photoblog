@@ -1,0 +1,18 @@
+{# Semantic list tags help assistive technologies #}
+
+
+    {% set previousPost = collections.posts | head(-2) %}
+		{% if previousPost %}
+			<div class="mb-5 col ps-5 text-start">
+                <a href="{{ previousPost[0].url | url }}"><< {{ previousPost[0].data.title }}</a>
+            </div>
+		{% endif %}
+
+	{# {% for post in postslist | reverse %}
+			{% for tag in post.data.tags %}
+				{%- if collections.tagList.indexOf(tag) != -1 -%}
+					{% set tagUrl %}/tags/{{ tag }}/{% endset %}
+					<a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+				{%- endif -%}
+			{% endfor %}
+	{% endfor %} #}

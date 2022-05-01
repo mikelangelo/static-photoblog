@@ -8,11 +8,12 @@ homeSummary: "My new photoblog. A place to share stories and ideas..."
 
 
 <div class="container-fluid">
-	<div class="container-fluid">
-		{% include "source/pages/page-components/latest-post.njk" %}
-	</div>
+<div class="row">	
+	{% include 'source/pages/page-components/blog-home-previous.njk' %}
+</div>
+	{% include "source/pages/page-components/latest-post.njk" %}
 
     {# This is an example of a page component #}
-{% include 'source/pages/page-components/post-previous-next.njk' %}
+
 
 </div><!-- end container -->

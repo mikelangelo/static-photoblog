@@ -4,11 +4,11 @@
 
 {% for post in latestPost %}
 
-	<h3 class="postTitle">
+	<h2 class="postTitle">
 		{{ post.data.title }}
 		<br>
 		<span>{{ post.date | htmlDateString }}</span>
-	</h3>
+	</h2>
 
 	<div class="featuredImage">
 		<img src="../../images/{{ post.data.featuredImage}}" />
@@ -17,8 +17,6 @@
 	<p class="summary">
 		{{ post.data.postDescription }}
 	</p>
-
-
 
 
 {% endfor %}
