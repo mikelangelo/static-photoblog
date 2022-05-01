@@ -9,12 +9,22 @@ featuredImage: "20050415204325_img_0880.jpg"
 ---
 
 
-<h2>{{postTitle}}</h2>
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{date}}</span></h2>
 <div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
 </div>
 
-{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+<div class="row">
 
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %} 
+</div>
+<div class="row">
+
+<div class="col-md-4">
 <p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+</div>
+<div class="col-md-8">
 <p class="description">{{postDescription}}</p>
+</div>
+</div>

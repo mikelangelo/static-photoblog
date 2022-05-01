@@ -1,5 +1,5 @@
 body{
-	background-color: #444;
+	background-color: #333;
 	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 	font-weight: 400;
 	font-style: normal;
@@ -27,11 +27,24 @@ main {
 	min-height: 65vh;
 }
 
+.postTitle{
+	padding: 2rem 0;
+	margin: 2rem auto;
+	width: 75vw;
+	max-width: 1024px;
+	text-align: center;
+}
+.postTitle span{
+	font-size: 13pt;
+	color: #999;
+	font-style: italic;
+}
+
 .featuredImage{
 	width: 100%;
 	max-width: 1024px;
 	margin-left: auto;
-	margin-top: auto;
+	margin-right: auto;
 	text-align: center;
 }
 
@@ -44,6 +57,13 @@ main {
 	text-decoration: none;
 	font-size: 1.5rem;
 	color: #aaa;
+}
+
+.summary{
+	padding: 2rem 0;
+	margin: 2rem auto;
+	width: 75vw;
+	max-width: 1024px;
 }
 
 header{

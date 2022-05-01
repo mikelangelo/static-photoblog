@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/post.njk
 title: "Home"
 permalink: /
 pageTitle: "Testing"
@@ -8,15 +8,11 @@ homeSummary: "My new photoblog. A place to share stories and ideas..."
 
 
 <div class="container-fluid">
-	<div class="row pb-5 border-bottom mb-5">
-    	<div class="col">
-    		<p class="">{{homeSummary}}</p>
-    	</div><!-- end col -->
-    </div><!-- end row -->
 	<div class="container-fluid">
 		{% include "source/pages/page-components/latest-post.njk" %}
 	</div>
+
     {# This is an example of a page component #}
-    {% include 'source/pages/page-components/latest-3-posts.njk' %}
+{% include 'source/pages/page-components/post-previous-next.njk' %}
 
 </div><!-- end container -->
