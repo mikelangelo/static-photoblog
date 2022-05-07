@@ -3,7 +3,7 @@
 
     {% set previousPost = collections.posts | head(-2) %}
 		{% if previousPost %}
-			<div class="mb-5 col ps-5 text-start">
+			<div class="col ps-5 text-start">
                 <a href="{{ previousPost[0].url | url }}"><< {{ previousPost[0].data.title }}</a>
             </div>
 		{% endif %}

@@ -8,13 +8,13 @@ permalink: /posts/{{ title|slugURL }}-{{ date|slugURL }}/
 		{# LINK TO PREVIOUS POST #}
 		{%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
 		{%- if previousPost %}
-			<div class="mb-5 col ps-5 text-start"><a href="{{ previousPost.url | url }}"><< {{ previousPost.data.title }}</a></div>
+			<div class="col ps-5 text-start"><a href="{{ previousPost.url | url }}"><< {{ previousPost.data.title }}</a></div>
 		{% endif %}
 
 		{# LINK TO NEXT POST #}
 		{%- set nextPost = collections.posts | getNextCollectionItem(page) %}
 		{%- if nextPost %}
-			<div class="pe-5 mb-5 col text-end"><a href="{{ nextPost.url | url }}">{{ nextPost.data.title }} >></a> </div>
+			<div class="pe-5 col text-end"><a href="{{ nextPost.url | url }}">{{ nextPost.data.title }} >></a> </div>
 		{% endif %}
 		{# {% include 'source/pages/page-components/post-previous-next.njk' %} #}
 	</div>
