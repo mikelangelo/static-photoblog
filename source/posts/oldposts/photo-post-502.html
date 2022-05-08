@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-date: "09-02-2006"
+date: "2006-09-02"
 title: "It's Miller time!"
 postTitle: "It's Miller time!"
 postDescription: "Sigh... this just ticks me off. First, technically, you're not supposed to drink in the forest preserves. But if you do, why can't you just toss your garbage?!!\r\n\r\nsigh... "
@@ -9,7 +9,7 @@ featuredImage: "20060902194602_img_5948.jpg"
 
 
 <h2 class="postTitle">{{postTitle}} <br>
-<span>{{date}}</span></h2>
+<span>{{ date | postDateString }}</span></h2>
 <div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
 </div>

@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-date: "12-08-2005"
+date: "2005-12-08"
 title: "Snowy Path..."
 postTitle: "Snowy Path..."
 postDescription: "Here's a path at a local forest preserve that got covered in about 4 inches of snow this afternoon. This is our first significant snowfall this winter in Chicago. I thought I'd try to capture some of it. "
@@ -9,7 +9,7 @@ featuredImage: "20051208232355_crw_8177.jpg"
 
 
 <h2 class="postTitle">{{postTitle}} <br>
-<span>{{date}}</span></h2>
+<span>{{ date | postDateString }}</span></h2>
 <div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
 </div>

@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-date: "08-02-2010"
+date: "2010-08-02"
 title: "Sam on the Beach"
 postTitle: "Sam on the Beach"
 postDescription: "Here's Sammy on the beach just havin' a blast. He's never been to the beach at all. We had to keep him from running into the waves. He thought it was just too cool!"
@@ -9,7 +9,7 @@ featuredImage: "20100731213518_samonthebeach-img_8211.jpg"
 
 
 <h2 class="postTitle">{{postTitle}} <br>
-<span>{{date}}</span></h2>
+<span>{{ date | postDateString }}</span></h2>
 <div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
 </div>

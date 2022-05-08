@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-date: "12-28-2005"
+date: "2005-12-28"
 title: "Landing"
 postTitle: "Landing"
 postDescription: "Check out this &lt;a href=&quot;http://www.photoflavor.com/index.php?id=308&quot;&gt;shot&lt;/a&gt;. This was one of my attempts at coming close to Zac's (&lt;a href=&quot;http://www.photoflavor.com/&quot;&gt;Photoflavor&lt;/a&gt; Photographer) timing with bird shots."
@@ -9,7 +9,7 @@ featuredImage: "20051228142202_crw_8858.jpg"
 
 
 <h2 class="postTitle">{{postTitle}} <br>
-<span>{{date}}</span></h2>
+<span>{{ date | postDateString }}</span></h2>
 <div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
 </div>

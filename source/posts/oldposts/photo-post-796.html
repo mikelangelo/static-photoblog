@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-date: "05-05-2012"
+date: "2012-05-05"
 title: "little flower"
 postTitle: "little flower"
 postDescription: "I don't remember where I was in the house, but I found this small, sad looking flower/twig. Someone obviously brought it in the house unknowingly. It is very small. each flower is maybe .25cm in diameter. For some reason it just caught my eye and I decided to make it look bigger.\r\n\r\nThanks for looking. "
@@ -9,7 +9,7 @@ featuredImage: "20120505084748_little flower.jpg"
 
 
 <h2 class="postTitle">{{postTitle}} <br>
-<span>{{date}}</span></h2>
+<span>{{ date | postDateString }}</span></h2>
 <div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
 </div>

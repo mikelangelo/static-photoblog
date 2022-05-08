@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-date: "12-24-2005"
+date: "2005-12-24"
 title: "Santa Catalinas"
 postTitle: "Santa Catalinas"
 postDescription: "This was taken at the top of Mt. Lemon in Tucson, AZ. If you EVER get the opportunity to go hiking on or near mountains... don't pass it up and DON'T forget your camera!"
@@ -9,7 +9,7 @@ featuredImage: "20051224202645_crw_8674.jpg"
 
 
 <h2 class="postTitle">{{postTitle}} <br>
-<span>{{date}}</span></h2>
+<span>{{ date | postDateString }}</span></h2>
 <div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
 </div>

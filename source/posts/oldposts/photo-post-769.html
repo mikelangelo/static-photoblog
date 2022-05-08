@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-date: "01-07-2011"
+date: "2011-01-07"
 title: "Arizona Mountain Sunrise"
 postTitle: "Arizona Mountain Sunrise"
 postDescription: "While in Arizona for Christmas this year, I saw some beautiful sunrises (blessing and curse of kids, sometimes as they seem to not like sleeping in). Every morning I saw a different sunrise. This time, the light was cutting through the morning fog...which, when in Tucson, looks cool because it's not there often. "
@@ -9,7 +9,7 @@ featuredImage: "20110107001458_mountainsunrise.jpg"
 
 
 <h2 class="postTitle">{{postTitle}} <br>
-<span>{{date}}</span></h2>
+<span>{{ date | postDateString }}</span></h2>
 <div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
 </div>

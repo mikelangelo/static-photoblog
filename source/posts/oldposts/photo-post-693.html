@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-date: "04-23-2009"
+date: "2009-04-23"
 title: "Goose Egg"
 postTitle: "Goose Egg"
 postDescription: "So Charlie came home with a goose egg on his head the other day (just above his left eye). He fell down while running and his head went straight into a post. D'OH!"
@@ -9,7 +9,7 @@ featuredImage: "20090423180148_charliebump  105.jpg"
 
 
 <h2 class="postTitle">{{postTitle}} <br>
-<span>{{date}}</span></h2>
+<span>{{ date | postDateString }}</span></h2>
 <div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
 </div>

@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-date: "02-10-2010"
+date: "2010-02-10"
 title: "Wilted Rose"
 postTitle: "Wilted Rose"
 postDescription: "This is a snow capped wilted rose from my backyard. I've downloaded the trial version of Aperture 3 (http://www.apple.com/aperture) and this is the first image I test it out with. Overall, I'm noticing a little performance boost and I'm just starting to play with some of the new features. "
@@ -9,7 +9,7 @@ featuredImage: "20100210153102_wiltedrose  img_0803 (1).jpg"
 
 
 <h2 class="postTitle">{{postTitle}} <br>
-<span>{{date}}</span></h2>
+<span>{{ date | postDateString }}</span></h2>
 <div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
 </div>

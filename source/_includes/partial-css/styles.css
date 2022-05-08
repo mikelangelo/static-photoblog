@@ -59,9 +59,10 @@ main {
 	color: #aaa;
 }
 
-.summary{
-	padding: 2rem 0;
-	margin: 2rem auto;
+.summary, 
+.description{
+	padding: .5rem 0;
+	margin: .5rem auto;
 	width: 75vw;
 	max-width: 1024px;
 }

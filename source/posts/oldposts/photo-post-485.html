@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-date: "07-31-2006"
+date: "2006-07-31"
 title: "Class of '92"
 postTitle: "Class of '92"
 postDescription: "This again, is the Fox River in Batavia, IL."
@@ -9,7 +9,7 @@ featuredImage: "20060727125818_crw_3347.jpg"
 
 
 <h2 class="postTitle">{{postTitle}} <br>
-<span>{{date}}</span></h2>
+<span>{{ date | postDateString }}</span></h2>
 <div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
 </div>

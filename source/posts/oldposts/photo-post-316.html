@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-date: "12-26-2005"
+date: "2005-12-26"
 title: "Mt. Lemon"
 postTitle: "Mt. Lemon"
 postDescription: "A view on Mt. Lemon in Tucson, AZ."
@@ -9,7 +9,7 @@ featuredImage: "20051226013639_crw_8661.jpg"
 
 
 <h2 class="postTitle">{{postTitle}} <br>
-<span>{{date}}</span></h2>
+<span>{{ date | postDateString }}</span></h2>
 <div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
 </div>

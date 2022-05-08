@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-date: "05-28-2006"
+date: "2006-05-28"
 title: "Orchid#1"
 postTitle: "Orchid#1"
 postDescription: "I started playing with a small lightbox I got and a couple of halogen lights. What do you think? I'm not too happy with it...but I have a lot to learn, yet. For a first try of using controlled light, it's ok, I guess. I didn't use a flash."
@@ -9,7 +9,7 @@ featuredImage: "20060518180258_crw_1919.jpg"
 
 
 <h2 class="postTitle">{{postTitle}} <br>
-<span>{{date}}</span></h2>
+<span>{{ date | postDateString }}</span></h2>
 <div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
 </div>

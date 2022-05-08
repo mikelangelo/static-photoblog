@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-date: "10-17-2005"
+date: "2005-10-17"
 title: "Bridgette"
 postTitle: "Bridgette"
 postDescription: "My wife's horse, Bridgette at a recent Dressage Schooling show. "
@@ -9,7 +9,7 @@ featuredImage: "20051017232432_crw_7159.jpg"
 
 
 <h2 class="postTitle">{{postTitle}} <br>
-<span>{{date}}</span></h2>
+<span>{{ date | postDateString }}</span></h2>
 <div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
 </div>

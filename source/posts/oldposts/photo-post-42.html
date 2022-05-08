@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-date: "05-07-2005"
+date: "2005-05-07"
 title: "Brave little bird"
 postTitle: "Brave little bird"
 postDescription: "This bird was very brave and allowed me to creep up just a few feet away from his tree. My wife suggested his nest wasn't far off, which might explain his bravery."
@@ -9,7 +9,7 @@ featuredImage: "20050507131601_img_2956.jpg"
 
 
 <h2 class="postTitle">{{postTitle}} <br>
-<span>{{date}}</span></h2>
+<span>{{ date | postDateString }}</span></h2>
 <div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
 </div>

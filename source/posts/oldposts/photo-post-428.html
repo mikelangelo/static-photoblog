@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-date: "05-15-2006"
+date: "2006-05-15"
 title: "Construction #1"
 postTitle: "Construction #1"
 postDescription: "There is a Forest Preserve near us, Windfield Mounds, that has construction happening on the property. It's unfortunate as the land is surrounded by beautiful forest. Right now, there's a row of earth movers out on the land wiping away the prairie grasses. "
@@ -9,7 +9,7 @@ featuredImage: "20060513194024_crw_1724.jpg"
 
 
 <h2 class="postTitle">{{postTitle}} <br>
-<span>{{date}}</span></h2>
+<span>{{ date | postDateString }}</span></h2>
 <div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
 </div>

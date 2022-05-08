@@ -244,7 +244,7 @@ The YAML in each post looks something like this:
 layout: layouts/post.njk
 title: "This is my first post"
 description: "This is a post on My Blog about agile frameworks."
-date: "06-01-2018"
+date: "2018-06-01"
 tags:
   - "Home Furnishings"
   - "Kitchen Decorations"

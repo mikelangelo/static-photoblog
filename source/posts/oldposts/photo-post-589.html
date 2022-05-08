@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-date: "09-14-2007"
+date: "2007-09-14"
 title: "BBAAaaaaaaaa...."
 postTitle: "BBAAaaaaaaaa...."
 postDescription: "This is a sheep from Cline Creek Farm. It's an 1890's working farm. It's part of the DuPage County Forest Preserve. They have a well known sheep breeding stock. Here's one of them poking his head out a smidge. "
@@ -9,7 +9,7 @@ featuredImage: "20070914150232_img_4981.jpg"
 
 
 <h2 class="postTitle">{{postTitle}} <br>
-<span>{{date}}</span></h2>
+<span>{{ date | postDateString }}</span></h2>
 <div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
 </div>

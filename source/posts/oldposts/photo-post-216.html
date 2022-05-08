@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-date: "09-14-2005"
+date: "2005-09-14"
 title: "Macro #1"
 postTitle: "Macro #1"
 postDescription: "Well, here's my FIRST Macro shot with a real Macro lens, ever! I just got a Sigma 105mm f/2.8 Macro lens in the mail today. I can't get out of the office, but I had to take a picture of something. Here's a little bagota (sp?) that's in my Zen garden in my office. "
@@ -9,7 +9,7 @@ featuredImage: "20050914193032_crw_6082.jpg"
 
 
 <h2 class="postTitle">{{postTitle}} <br>
-<span>{{date}}</span></h2>
+<span>{{ date | postDateString }}</span></h2>
 <div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
 </div>

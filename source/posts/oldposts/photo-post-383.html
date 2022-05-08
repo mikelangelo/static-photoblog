@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-date: "03-29-2006"
+date: "2006-03-29"
 title: "First macro"
 postTitle: "First macro"
 postDescription: "JUST bought a new Macro lens tonight. The Canon 60mm f/2.8 Macro lens is pretty sweet!! It was after sunset and had to try it on something...so here's the tip of a branch. "
@@ -9,7 +9,7 @@ featuredImage: "20060329225335_crw_0432.jpg"
 
 
 <h2 class="postTitle">{{postTitle}} <br>
-<span>{{date}}</span></h2>
+<span>{{ date | postDateString }}</span></h2>
 <div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
 </div>

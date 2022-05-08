@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-date: "09-17-2005"
+date: "2005-09-17"
 title: "Riding Lesson"
 postTitle: "Riding Lesson"
 postDescription: "Here is a student at the &lt;a href=&quot;http://www.danada.info&quot; style=&quot;text-decoration: underline&quot;&gt;Danada Equestrian Center&lt;/a&gt;. I believe she is riding Austin... I'm not sure, though."
@@ -9,7 +9,7 @@ featuredImage: "20050917215206_crw_6233.jpg"
 
 
 <h2 class="postTitle">{{postTitle}} <br>
-<span>{{date}}</span></h2>
+<span>{{ date | postDateString }}</span></h2>
 <div class="featuredImage">
 <img src="../../images/{{featuredImage}}" />
 </div>
