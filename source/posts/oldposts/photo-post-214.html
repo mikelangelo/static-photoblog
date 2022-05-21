@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2005-09-09"
+title: "What do you see?"
+postTitle: "What do you see?"
+postDescription: " I thought these clouds were pretty amazing. I took this with my 70-200mm f/4.0 Canon lens, unfortunately. Not really ideal for a landscape shot...but I had to try. The dark clouds in the foreground on the right makes me think of a dragon or an Alien from the movie. I brought up the contrast and saturation a little. That's about it.\r\n\r\nI thought &lt;a href=&quot;http://www.photoflavor.com/index.php?id=233&quot; style=&quot;text-decoration: underline;&quot;&gt;this shot&lt;/a&gt; was pretty marvelous for a sunset shot!"
+featuredImage: "20050909224907_crw_5916 copy.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

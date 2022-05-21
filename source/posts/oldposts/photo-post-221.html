@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2005-09-17"
+title: "&quot;What did I JUST SAY?!&quot;"
+postTitle: "&quot;What did I JUST SAY?!&quot;"
+postDescription: "Here's my wife teaching a horseback riding lesson at the &lt;a href=&quot;http://www.danada.info&quot; style=&quot;text-decoration: underline&quot;&gt;Danada Equestrian Center&lt;/a&gt;. I'm not the ONLY one she has to raise her voice too. ;-)"
+featuredImage: "20050917215040_crw_6200.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

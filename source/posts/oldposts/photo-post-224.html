@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2005-09-26"
+title: "Bathing Stall Tie Ring"
+postTitle: "Bathing Stall Tie Ring"
+postDescription: "This is a tie ring to tie your horse to when givin' ol' Gertrude a bath! (That's for Uncle Joe!)"
+featuredImage: "20050926232739_crw_6322 copy.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2005-09-08"
+title: "Peace Rally Crowd"
+postTitle: "Peace Rally Crowd"
+postDescription: "Here is some of the people that attended the peace rally in Wheaton, IL. I'm still working on my composition skills. I liked her shirt. The nice yellow color made her pop out of the crowd a little bit, too. "
+featuredImage: "20050908164827_crw_5964 copy.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

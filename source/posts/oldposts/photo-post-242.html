@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2005-10-11"
+title: "Carmen on Chief"
+postTitle: "Carmen on Chief"
+postDescription: "This is Carmen riding Chief in a Barrel racing demonstration. She's the a Champion Western Gaming competitor in her age group. (Something like 18 years old... not positive) I have much to learn about sports photography, otherwise, i would have had many other shots to post of some fast action.\r\n\r\nShe has come to the &lt;a href=&quot;http://www.danada.info/&quot;&gt;Danada&lt;/a&gt; Fall Festival a couple times now, and is a very popular exhibiter!"
+featuredImage: "20051011110903_crw_6892.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>
