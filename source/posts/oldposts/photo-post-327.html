@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2006-01-03"
+title: "Corner of a Barn"
+postTitle: "Corner of a Barn"
+postDescription: "This is the edge of a barn at Kline Creek Farm in DuPage County. I was just playing and thought this image slightly interesting. It was dark out so I had to up my ISO to 800 and hold the camera VERY steady. It was good practice."
+featuredImage: "20060103213128_crw_9209.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2005-11-06"
+title: "ducks..."
+postTitle: "ducks..."
+postDescription: "More ducks from Cosley Zoo. I haven't had time to take more pics recently. Hopefully, I can do that today or tomorrow. I'm going to buy a new lens soon. Hopefully, I'll be able to get it this week. \r\n\r\nWe'll see. "
+featuredImage: "20051106145515_crw_7532.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

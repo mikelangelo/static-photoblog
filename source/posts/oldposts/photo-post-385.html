@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2006-04-02"
+title: "Equine Mealtime #2"
+postTitle: "Equine Mealtime #2"
+postDescription: "I like this one because the hay came out very sharp so the nose and hay seem to pop pretty well. Also it focuses on the activity. He's just chowin' down. The only other part of the horse you really see is his belly... I thought that worked out well."
+featuredImage: "20060326225719_crw_0078.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

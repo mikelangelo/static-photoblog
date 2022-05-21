@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2005-11-15"
+title: "Another Fall leaf shot!"
+postTitle: "Another Fall leaf shot!"
+postDescription: "Yeah... I like leaves. I think they provide a nice opportunity to practice composition and skills with the camera. Especially in the fall, they provide subjects of vibrant color that you can get as close to or far from as you wish. Kinda' fun. "
+featuredImage: "20051115185046_crw_7742.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

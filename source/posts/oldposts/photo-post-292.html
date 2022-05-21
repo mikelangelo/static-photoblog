@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2005-12-05"
+title: "Self Portrait..."
+postTitle: "Self Portrait..."
+postDescription: "This self portrait is my entry for the Pixelpost Demo site. \r\n\r\nI chose my eye as my self portrait because my eyes are everything. For illustration, photography, desgin, reading, programming...my eyes are essential. And I'm always trying to develop my 'eye' to be better at what I do. And believe, me... I have a lot of work to do in that area!\r\n\r\nImage is cropped with some tweaking in the eyeball and, of course, made B&amp;W via the channel mixer. "
+featuredImage: "20051205205030_myeyecrw_8169.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2006-02-12"
+title: "Barbed Wire"
+postTitle: "Barbed Wire"
+postDescription: "I had a few minutes before a meeting today. Since I had my camera, I decided to drive around and look for something to photograph. Turns out, I was interested by the fence around a cemetary. It was overcast with a light flurry. I'll put up one more tomorrow that I think is neat because it shows some of the snowflakes frozen in time. "
+featuredImage: "20060212021126_crw_9512.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

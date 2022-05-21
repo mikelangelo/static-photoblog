@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2005-12-04"
+title: "Leaves #1"
+postTitle: "Leaves #1"
+postDescription: "Went to the &lt;a href=&quot;http://www.mortonarb.org/&quot;&gt;Morton Arboretum&lt;/a&gt; today. Playing with my new Tamron 28-75 lens to see how close to Macro I can get. I was pretty happy with the details in the veins of these leaves. I've got a couple more to show, too."
+featuredImage: "20051204182600_crw_8148.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

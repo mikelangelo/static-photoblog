@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2005-11-16"
+title: "Chicago brick wall..."
+postTitle: "Chicago brick wall..."
+postDescription: "I just got my new Tamron 28-75mm 2.8 lens and I just tried it out real quick in the parking garage in downtown Chicago. It was rainy out and dark so I couldn't do much interesting...but I haven't taken pics of a brick wall, yet... so here is my first. \r\n\r\nMy buddy posted photos from when we both went to the Museum of Science and Industry. I must always remember... when you hang out with a photographer... the odds are reasonable that you 'just might' end up in some pics. &lt;a href=&quot;http://rdh.smugmug.com/gallery/971154/1/44740670&quot;&gt;Here's me&lt;/a&gt; as he's showing me his wide angle lens."
+featuredImage: "20051116021954_crw_7800.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

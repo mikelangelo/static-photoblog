@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2006-01-30"
+title: "Windmill #1"
+postTitle: "Windmill #1"
+postDescription: "This isa restored Windmill in Batavia, Illinois off of Route 25 on the edge of the Fox River. I was driving by this weekend and had to stop. I had never seen it before. I still have some work to do on my composition and post processing, but I was short for time. I'll post another shot of it tomorrow. "
+featuredImage: "20060130190203_crw_9390.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

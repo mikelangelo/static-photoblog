@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2006-02-26"
+title: "Tae Kwon Do-Kata"
+postTitle: "Tae Kwon Do-Kata"
+postDescription: "This was taken at my dojo. I started playing with the colors in Photoshop and got carried away... "
+featuredImage: "20060226202103_crw_9443.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

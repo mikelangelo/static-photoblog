@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2006-03-31"
+title: "a little nutty"
+postTitle: "a little nutty"
+postDescription: "This little dude was chowin' down on his nut and he wasn't going to let me interrupt his meal. Which was nice because that gave me about 60 seconds or so to try get a picture. He was way backlit by the sky, so this was a trick. This was the only shot that was even worth considering. But since he was eating upside-down, holding onto the tree with his back feet...I thought the image was worth posting."
+featuredImage: "20060326161348_crw_0043.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

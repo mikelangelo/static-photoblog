@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2005-11-05"
+title: "Hoot Hoot"
+postTitle: "Hoot Hoot"
+postDescription: "This guy was brought to the Danada Fall Festival one of the DuPage County Districts (Willowbrook, I believe)."
+featuredImage: "20051105174937_crw_6866.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>
