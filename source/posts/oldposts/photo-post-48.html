@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2005-05-13"
+title: "Don't Even Think About It."
+postTitle: "Don't Even Think About It."
+postDescription: ""
+featuredImage: "20050513221506_img_3044.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

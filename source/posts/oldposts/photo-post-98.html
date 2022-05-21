@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2005-05-31"
+title: "Pink Flower"
+postTitle: "Pink Flower"
+postDescription: "This was taken at Cantigny Park in Wheaton, IL on Memorial day. Same with the Dragonfly, and bee on the previous images."
+featuredImage: "20050531231709_crw_3884 copy.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>
