@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2007-01-11"
+title: "Little Birdi"
+postTitle: "Little Birdi"
+postDescription: "This was taken on the beach in california over Christmas vacation. These guys were all over. It was about 55 degrees or so in the afternoon. Pleasant, really. \r\n\r\nI did get my camera back from the shop today, so hopefully, I'll be able to get some new shots for posting soon. "
+featuredImage: "20070111034333_smallbirdimg_0171.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2009-06-07"
+title: "Springtime is a bloomin'"
+postTitle: "Springtime is a bloomin'"
+postDescription: "A lot of the plants/flowers julie planted over the last couple of years have really started to bloom beautifully! Here's one that I thought might look nice in B&W with just the flowers in color. This shows the actual color of the flowers."
+featuredImage: "20090525131543_b&wflowers  177.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

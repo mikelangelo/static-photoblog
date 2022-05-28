@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2006-08-27"
+title: "Sunset"
+postTitle: "Sunset"
+postDescription: "To close this group of shots from this trip, this is one of my first sunsets. I haven't made many opportunities to photograph sunsets, lately. So, I don't have much experience with them. This one struck me, however. "
+featuredImage: "20060823165005_crw_4590.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

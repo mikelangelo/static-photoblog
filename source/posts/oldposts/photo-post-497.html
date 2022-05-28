@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2006-08-29"
+title: "Those whacky kids..."
+postTitle: "Those whacky kids..."
+postDescription: "Emaline, Ernie, and Isabelle! Three sweethearts. They were VERY good on this trip. And they're growing up WAY fast. Everyime I see them they have just changed so much. They are 3, 5, 7 approximately. I felt the orange flowers worked really well with their clothes. I wish I was the one that thought to put them there! (that was their mother's idea, I believe)"
+featuredImage: "20060823170942_crw_5006.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

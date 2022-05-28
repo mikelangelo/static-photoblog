@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2006-10-20"
+title: "hello... what's this?"
+postTitle: "hello... what's this?"
+postDescription: "I went to &lt;a href=&quot;http://www.cosleyzoo.org&quot;&gt;Cosley Zoo&lt;/a&gt; this summer and got a couple pics of their Turkey Buzzards (I think that's what they are). They just threw food into their area. Ironically enough, the Peacocks (in the same pen) were able to chase these guys off and get first dibs on the food. Go figure. "
+featuredImage: "20061020223907_img_7847.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

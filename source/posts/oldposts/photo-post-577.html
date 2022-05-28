@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2007-08-14"
+title: "Shower#1"
+postTitle: "Shower#1"
+postDescription: "This is my wife, Julie. She's holding up a lovely bib/apron thingy (don't ask me for the right name, I'm a guy) for our expected first baby, Charlie. We held a shower at our place this past sunday and this was one of the gifts my Aunt Bev was so generous in providing. Even though it was an insanely hot day (95+ degrees), it was a very good day! Thanks to all who came and supported us!!!"
+featuredImage: "20070814195120_img_4157.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

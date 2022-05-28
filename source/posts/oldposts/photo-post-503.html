@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2006-09-05"
+title: "Heron on Fox River"
+postTitle: "Heron on Fox River"
+postDescription: "This guy was out on the Fox river yesterday. Julie and I took a bike ride out there and we saw some nice places I might have to go back to for some photos of Egrets and Herons! One place was secluded but from a bridge we saw a couple dozen egrets nesting and in the water by some railroad tracks... It'll be hard to get to, but I'm going to have to try sometime. Not sure if I'll be able to before next year, tho'.\r\n\r\n"
+featuredImage: "20060904195449_img_6002.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

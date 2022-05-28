@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2006-09-12"
+title: "Ms. Kitty"
+postTitle: "Ms. Kitty"
+postDescription: "So... This is Ms. Kitty. When we moved into our house, the previous owners made sure that we would agree to feed Ms. Kitty. She stays in the vicinity of a few houses and we all take care of her a little bit. Everyday after work, she comes over says &quot;Meow, meow&quot; in her &quot;smoker's-meow&quot; kinda' way. Which means &quot;Feed ME!&quot; Which Julie and I do. She eats well. "
+featuredImage: "20060912045550_img_6522.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

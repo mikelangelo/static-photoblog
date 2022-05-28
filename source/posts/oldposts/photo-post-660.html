@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2008-10-13"
+title: "Charlie Burried in Staw"
+postTitle: "Charlie Burried in Staw"
+postDescription: "Julie and I went to the Danada Fall Festival yesterday. Spectacular day! Sunny and toasty. Charlie got to play in the straw playpen and seemed to be good with it. I ended up with more photos of the boy than horses or events...but I guess that's to be expected from his Dad, huh? Thanks for looking!"
+featuredImage: "20081013093228_img_14712008-10-12.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

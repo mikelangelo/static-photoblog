@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2010-10-10"
+title: "White Rose on Black #1"
+postTitle: "White Rose on Black #1"
+postDescription: "This is one of my wife's beautiful roses this year. There was a morning where the dew just look great. So I actually spent a few minutes and provided a black backdrop (old t-shirt), diffused lighting (diffuser) and a tripod. I've got one more I'll post tomorrow."
+featuredImage: "20101010232947_bw-flower__img_9753.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

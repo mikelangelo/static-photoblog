@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2006-10-01"
+title: "blue wave"
+postTitle: "blue wave"
+postDescription: "Raided the archive today. My wife and I went to the Indiana Dunes National Park over the summer and this one was an ok shot. "
+featuredImage: "20061001224258_bluewavecrw_3613.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

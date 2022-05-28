@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2011-04-13"
+title: "Happy Boys"
+postTitle: "Happy Boys"
+postDescription: "The boys LOVE the lawn mower (aka, momo). They finally started having fun sharing the seat. A little over exposed by Apple Aperture helped me fix much of the issue with that."
+featuredImage: "20110413091600_happy__img_7900.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

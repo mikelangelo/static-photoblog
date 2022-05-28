@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2006-06-26"
+title: "IKEA"
+postTitle: "IKEA"
+postDescription: "This here be our new wood blinds that we got over at IKEA for $20 a pop. Cheaper than anywhere welse and, oddly enough, they had just what we wanted!! "
+featuredImage: "20060620232114_crw_2494.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

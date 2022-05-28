@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2009-07-03"
+title: "Bug on a Flower"
+postTitle: "Bug on a Flower"
+postDescription: "Again, playing with the close-up filter on my 50mm lens. This flower was right outside the backdoor. Thanks for lookng!"
+featuredImage: "20090701113718_bugonflower  181.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

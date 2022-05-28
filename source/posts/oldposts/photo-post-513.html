@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2006-09-18"
+title: "Bridge out..."
+postTitle: "Bridge out..."
+postDescription: "I find this one interesting... there is barely any sign of what kind of bridge used to be here. It's been gone for a LONG time... yet they feel the sign is still necessary. The sign looks somewhat new. "
+featuredImage: "20060916093836_img_7374.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

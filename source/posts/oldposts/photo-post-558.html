@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2007-06-01"
+title: "STOP!"
+postTitle: "STOP!"
+postDescription: "while walking through Milwaukee, I happened to notice this stop sign in the hedge. No idea why it was there...but I couldn't resist... it HAD to be photographed!\r\n"
+featuredImage: "20070528193600_img_1910.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

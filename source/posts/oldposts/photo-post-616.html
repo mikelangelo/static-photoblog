@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2007-12-28"
+title: "Paint Can"
+postTitle: "Paint Can"
+postDescription: "Found this while walking in a wash in Tucson, AZ. Lots of rusted paint cans and empty .22 calibre shells littered the place! whacky. "
+featuredImage: "20071227130451_img_7148.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2009-09-12"
+title: "Big Shirt"
+postTitle: "Big Shirt"
+postDescription: "Sam is wearing one of Charlie's bigger sweatshirts. it's a little big, admittedly, but it helped on a day when the house was chilly."
+featuredImage: "20090910154517_samoversizedshirt  img_8127.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

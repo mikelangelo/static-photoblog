@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2007-08-18"
+title: "The Minneapolis"
+postTitle: "The Minneapolis"
+postDescription: "This is the Minneapolis. It's a steam powered engine. In this photo, it's providing the power to run an old fashioned separator for threshing wheat stalks. It's pretty sweet. This is the piston that turns the pulley on the other side. This was taking place at the &lt;a href=&quot;http://dupageforest.com/education/klinecreek.html&quot;&gt;Dupage Forest Preserve's Kline Creek Farm&lt;/a&gt;. It's an 1880s style working farm. Pretty cool stuff!! I'll be posting various pics of this over the next few days.\r\n\r\nThanks for looking!!"
+featuredImage: "20070818212921_img_4515.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

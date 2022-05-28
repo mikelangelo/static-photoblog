@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2009-09-11"
+title: "Summersault"
+postTitle: "Summersault"
+postDescription: "So, while in the arena, charlie began doing some JuJitsu roles.. learning to fall and role can save him a lot of hurt one day. Actually... out of nowhere, he just started doing summersaults in the dirt. i couldn't catch the actually role (I tried) and he only did 2 or 3 times... it was darn cute, tho'."
+featuredImage: "20090910000238_charliesummersault  img_8212.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

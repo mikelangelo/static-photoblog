@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2009-05-10"
+title: "Bowl O' Broccoli"
+postTitle: "Bowl O' Broccoli"
+postDescription: "..sigh... yes. It is a bowl of broccoli. Why broccoli, you ask? ... I dunno. It was there. Charlie wasn't eating it. My camera was at the table... I thought... what the heck. Result. A photo of a bowl O' broccoli."
+featuredImage: "20090510201449_broccolli  110.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2009-05-13"
+title: "Hero's after Haley..."
+postTitle: "Hero's after Haley..."
+postDescription: "This is one of my favorite all time photos of these two pups... they have fun together. Pretty classic stuff when they get all stoked like this. "
+featuredImage: "20090510201917_herochasehaley  139.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

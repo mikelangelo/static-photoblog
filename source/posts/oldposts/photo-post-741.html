@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2009-09-17"
+title: "Parked"
+postTitle: "Parked"
+postDescription: "This is one of Charlie's trucks. He had it parked with some of his toy tractors next to a whole one of the dogs dug. He likes trucks, tractors, and mud.. go figure."
+featuredImage: "20090915002142_monstertruck  img_8719 (1).jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

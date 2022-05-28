@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2007-04-30"
+title: "Brach's #1"
+postTitle: "Brach's #1"
+postDescription: "This is a shot of the interior of an old, closed down Brach's Candy Company Factory. At the &lt;a href=&quot;http://northamerica.photobloggers.org/&quot;&gt;North American Photoblogger&lt;/a&gt; Meetup in Chicago this weekend (April 27-29, 2007), a fellow photoblogger, &lt;a href=&quot;http://www.thomasmarlow.com/&quot; target=&quot;_blank&quot;&gt;Thomas Marlow&lt;/a&gt; led a group of us to this industrial building to take some shots. Take a look at one of &lt;a href=&quot;http://www.thomasmarlow.com/general/photos/153&quot; target=&quot;_blank&quot;&gt;Thomas' shots from this facility&lt;/a&gt;.\r\n\r\nI'll be posting another from this facility tomorrow. "
+featuredImage: "20070501014948_img_1184.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

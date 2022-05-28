@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2008-02-08"
+title: "Morning After...2"
+postTitle: "Morning After...2"
+postDescription: "Same scene as yesterday, I know... it's been slow for photography lately. I've been so busy I haven't been able to get out. I hope to get something more interesting soonish. \r\nI'd love to have something interesting such as a <a href=\"http://www.chromasia.com/iblog/archives/0802062128.php\">ferry that gets blown ashore by a storm</a> near Liverpool, England. Now THAT would be worth photographing!!\r\n\r\nThanks for looking!"
+featuredImage: "20080207130829_img_7690.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

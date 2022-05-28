@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2012-05-27"
+title: "Buick 8 #1"
+postTitle: "Buick 8 #1"
+postDescription: "Went to a horse show this weekend to meet up with my wife. Watchin' the kids and taking photos. Part way through the day, someone parks this beautiful Buick 8 next to us. I've never seen one before. It looked beautiful. The chrome was amazing. Had to snap a few pics before it was too late."
+featuredImage: "20120527154043_buick8.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

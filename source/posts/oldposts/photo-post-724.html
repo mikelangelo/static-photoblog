@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2009-07-02"
+title: "Pink and Green"
+postTitle: "Pink and Green"
+postDescription: "I've been trying out a simple close-up filter for my 50mm f/1.8 lens recently. As a result, you'll see a few pics of flowers/bugs as i play. This one was in the far back of the yard and I didn't even realized my wife had planted it."
+featuredImage: "20090701113610_flower  180.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

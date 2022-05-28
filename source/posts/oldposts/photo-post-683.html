@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2009-03-17"
+title: "Fancy Braids #1"
+postTitle: "Fancy Braids #1"
+postDescription: "I haven't been posting much lately, nor have I been taking many photos lately...but here is one from the archives. It's Dolly and her fancy braids from the Danada Fall Festival. (2007...I \"think\") I've been interested in desaturated, black and white or 'moody' treatments of photos, lately... I figured I'd start to play with this a little. Thanks for looking!"
+featuredImage: "20090317200151_dollie  085.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2011-06-10"
+title: "Hawaii Sunset #1"
+postTitle: "Hawaii Sunset #1"
+postDescription: "Sunset off the Kona coast of the Big Island of Hawaii. "
+featuredImage: "20110610204247_hi_sunset1-2101.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

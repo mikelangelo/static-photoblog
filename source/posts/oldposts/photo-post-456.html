@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2006-06-11"
+title: "hole"
+postTitle: "hole"
+postDescription: "Julie and I were taking a walk yesterday in Blackwell Forest Preserve with the dog. We stumbled on this. I thought it interesting. Hence the photograph."
+featuredImage: "20060611175656_crw_2337.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

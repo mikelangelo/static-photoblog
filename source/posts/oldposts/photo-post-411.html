@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2006-04-23"
+title: "Spring Leaf"
+postTitle: "Spring Leaf"
+postDescription: "I was trying to see what a leaf would look like with light showing through it."
+featuredImage: "20060423210105_crw_1127.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

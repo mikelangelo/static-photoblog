@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2006-06-22"
+title: "Yellow Leaf"
+postTitle: "Yellow Leaf"
+postDescription: "I'm beginning to play a little more with black and white, photoshop, color, etc. Let's see what I can do, ey?"
+featuredImage: "20060620231735_crw_2456.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

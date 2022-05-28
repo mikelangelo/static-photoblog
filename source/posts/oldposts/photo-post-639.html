@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2008-04-05"
+title: "Barn... thingy... "
+postTitle: "Barn... thingy... "
+postDescription: "This is a device that is at the Danada Equestrian Center. It's in the back near the Tool Shed and doesn't get used. It's intended for horses that are a little ornery to somewhat restrain them when they are getting shoed, if I'm not mistaken. It has a bit of a 'medieval' feel to, tho', I think. Also, I'd wager that being restrained would actually make it MORE difficult to work with a horse. If they try to fight against the restraints, they might spook and things would not be pleasant. \r\n\r\nOh.. and today was just a marvelously sunny and pleasant day! The first I've seen in a long while!"
+featuredImage: "20080405182242_img_80732008-03-26.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2007-05-31"
+title: "Frogger"
+postTitle: "Frogger"
+postDescription: "While visiting milwaukee, my wife and I walked around the Milwaukee Art museum. As we walked around on the grass, I noticed something move by my feet. it was this little guy. Actually, I thought he was pretty big. So, I proceeded to see how close I could get to him. My lens was about 4 inches in front of him in this shot. In retrospect, I should have either whipped out my macro, or perhaps my 70-200 so I could keep a farther distance. He might have hung around a little longer before hopping away. \r\n\r\nAs we left, we noticed a mother come and try and capture him. I haveno idea why, and we didn't stay long enough to find out. \r\n\r\nI hope he's ok. He was a good model."
+featuredImage: "20070528193457_img_1886.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

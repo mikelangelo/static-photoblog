@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2008-07-13"
+title: "What you YOU lookin' at, bub?!"
+postTitle: "What you YOU lookin' at, bub?!"
+postDescription: "We took Charlie on a hay ride at the new St. James Forest Preserve in DuPage County recently. It was a beautiful day and the ride was great. There was a guy getting on the wagon talking to the driver and I'm not sure if Charlie thought something was up or if he was just protecting his eyes from the sun... But I thought it was an interesting look. "
+featuredImage: "20080712231016_img_96642008-06-28.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>

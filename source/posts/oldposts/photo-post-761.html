@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+date: "2010-07-18"
+title: "Rust and Fences"
+postTitle: "Rust and Fences"
+postDescription: "I have this thing for rust and fences. They are fun to photograph... I think. Here's an example of both in the same image.\r\n\r\nOn a separate note, I've not been updating this site as often as I've taken photos. I hope to fix that in the near future. I thank you for your continued visits."
+featuredImage: "20100718230613_fencewire-4696.jpg"
+---
+
+
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+<img src="../../images/{{featuredImage}}" />
+</div>
+
+{# {% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p> #}
+<p class="description">{{postDescription}}</p>
