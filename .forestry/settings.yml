@@ -4,8 +4,6 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
-- type: heading
-  label: PAGES
 - type: directory
   path: source/posts
   label: Posts
@@ -14,6 +12,8 @@ sections:
   new_doc_ext: ".html"
   templates:
   - post
+- type: heading
+  label: PAGES
 - type: document
   path: source/pages/homepage.html
   label: Home
