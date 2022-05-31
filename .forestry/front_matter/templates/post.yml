@@ -2,7 +2,7 @@
 label: POST
 hide_body: true
 fields:
-- name: description
+- name: postDescription
   type: textarea
   default: ''
   config:
@@ -12,11 +12,11 @@ fields:
       format: markdown
   label: Description
   description: image description
-- name: primary_image
+- name: featuredImage
   type: file
   config:
     maxSize: 64
-  label: Primary IMage
+  label: Image
 - name: tags
   type: tag_list
   default: []
@@ -30,3 +30,8 @@ fields:
     date_format: 
     time_format: 
     display_utc: false
+- name: postTitle
+  type: text
+  config:
+    required: false
+  label: Title
