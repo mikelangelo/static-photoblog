@@ -9,7 +9,7 @@ sections:
   label: Posts
   create: documents
   match: "**/*"
-  new_doc_ext: ".html"
+  new_doc_ext: html
   templates:
   - post
 - type: heading
