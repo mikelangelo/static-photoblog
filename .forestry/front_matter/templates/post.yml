@@ -36,3 +36,5 @@ fields:
   config:
     required: false
   label: Title
+pages:
+- source/posts/forestry-test-post.html
