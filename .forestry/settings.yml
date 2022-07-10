@@ -6,9 +6,6 @@ webhook_url:
 sections:
 - type: heading
   label: POSTS
-- type: document
-  path: source/posts
-  label: PhotoPosts
 - type: directory
   path: source/posts
   label: Posts
