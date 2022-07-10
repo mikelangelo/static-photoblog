@@ -1,6 +1,7 @@
 ---
 label: POST
 hide_body: true
+display_field: postTitle
 fields:
 - name: postDescription
   type: textarea
