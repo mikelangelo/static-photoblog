@@ -21,7 +21,17 @@ permalink: /posts/{{ title|slugURL }}-{{ date|slugURL }}/
 		{{ content | safe }}
 	</div><!-- end spacing -->
 
-	
+<h2 class="postTitle">{{postTitle}} <br>
+<span>{{ date | postDateString }}</span></h2>
+<div class="featuredImage">
+	<img src="../../images/{{featuredImage}}" />
+</div>
+
+{% set photoData = ("source/images/" + featuredImage) | filterExifData %}
+<p class="exif">EXIF: {{ photoData.camera}}, {{ photoData.shutterSpd }}, {{ photoData.fStop | formatFStop }}</p>
+<p class="description">{{postDescription}}</p>
+
+
 </div><!-- end container -->
 
 
