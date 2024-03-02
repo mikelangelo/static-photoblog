@@ -40,6 +40,6 @@
 		"terser": "^5.7.0"
 	},
 	"dependencies": {
-		"exifreader": "^4.2.0"
+		"exifreader": "^4.21.0"
 	}
 }
