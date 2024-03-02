@@ -1,4 +1,4 @@
-# Celestial - An Eleventy Website Template
+# Mikelangelo Photography Static Site based on Celestial - An Eleventy Website Template
 
 An easy-to-use starter repository that shows you how to build a fully functioning website with the [Eleventy](https://github.com/11ty/eleventy) static site generator. Inside you'll find everything you need to create pages, start a blog, or both! This repo contains pre-built components like a header, navigation bar,  footer, meta components, minified CSS, minified JS, and a whole sleuth of utilities.
 
