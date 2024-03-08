@@ -1,5 +1,5 @@
 body{
-	background-color: #333;
+	/* background-color: #333; */
 	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 	font-weight: 400;
 	font-style: normal;
@@ -20,13 +20,15 @@ p{
 
 h2{
 	/* color: #aaa; */
-	border-bottom: 1px solid #ccc;
+	/* border-bottom: 1px solid #ccc; */
 }
 
 main {
 	min-height: 65vh;
 }
-
+.headerLogo{
+	height: 100px;
+}
 .postTitle{
 	padding: 2rem 0;
 	margin: 2rem auto;
@@ -59,7 +61,7 @@ main {
 	color: #aaa;
 }
 
-.summary, 
+.summary,
 .description{
 	padding: .5rem 0;
 	margin: .5rem auto;
@@ -69,5 +71,5 @@ main {
 
 header{
 	padding: 0;
-	border-bottom: 1px solid #222;
+	/* border-bottom: 1px solid #222; */
 }
