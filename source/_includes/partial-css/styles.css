@@ -27,7 +27,12 @@ main {
 	min-height: 65vh;
 }
 .headerLogo{
-	height: 100px;
+	height: 125px;
+	/* padding: .5em; */
+}
+.socialNav{
+	height: 40px;
+	padding: 0 3px
 }
 .postTitle{
 	padding: 2rem 0;
