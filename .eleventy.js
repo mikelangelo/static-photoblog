@@ -29,13 +29,13 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addFilter('postDateString', (dateObj) => {
 		var dateObject = new Date(dateObj);
 		return DateTime.fromJSDate(dateObject, {zone: 'utc'}).toFormat('LL-dd-yyyy');
-		
+
 	});
 
 	// https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
 	eleventyConfig.addFilter('htmlDateString', (dateObj) => {
 		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('LL-dd-yyyy');
-		
+
 	});
 
 
@@ -148,7 +148,10 @@ module.exports = function(eleventyConfig) {
 	// Returns a bootstrap icon
 	eleventyConfig.addShortcode("icon", function(name) {
 		/* {% icon house %} */
+		console.log("icon name is " + name);
 		let iconName = "node_modules/bootstrap-icons/icons/" + name + ".svg";
+		console.log(iconName);
+		iconName = "node_modules/bootstrap-icons/icons/list.svg";
 		return fs.readFileSync(iconName).toString();
 	});
 
