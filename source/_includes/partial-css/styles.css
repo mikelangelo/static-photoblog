@@ -84,3 +84,11 @@ header{
 .navbar-toggler:focus{
 	box-shadow: none;
 }
+.homeGallery .imgCard{
+	overflow: hidden;
+	margin-bottom: 1.2em;
+}
+
+.homeGallery .imgCard img{
+	width: 100%;
+}
