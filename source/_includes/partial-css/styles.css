@@ -66,6 +66,19 @@ main {
 	color: #aaa;
 }
 
+.pageTitle{
+	color: orange;
+
+}
+
+.intro{
+	/* text-align: center; */
+	font-size: 14pt;
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .summary,
 .description{
 	padding: .5rem 0;
