@@ -78,17 +78,47 @@ header{
 	padding: 0;
 	/* border-bottom: 1px solid #222; */
 }
+
+.navbar-toggler{
+ margin-left: auto;
+ margin-top: -20px;
+ margin-right: -15px;
+}
+.navbar-toggler-icon svg{
+	width: 30px;
+	height: 30px;
+	color: orange;
+}
 .navbar-toggler{
 	border-color: orange;
 }
 .navbar-toggler:focus{
 	box-shadow: none;
 }
-.homeGallery .imgCard{
+.homeGallery .imgCard,
+.galleryPage .imgCard{
 	overflow: hidden;
 	margin-bottom: 1.2em;
 }
 
-.homeGallery .imgCard img{
+.homeGallery .imgCard img,
+.galleryPage .imgCard img{
 	width: 100%;
+}
+li span,
+.dropdown-divider ~ span{
+	padding: .5em 1em;
+	/* background-color: #ddd; */
+	/* display: block; */
+	font-weight: bold;
+	font-style: italic;
+	color: orange;
+}
+link:hover,
+.nav-link:focus,
+.nav-link:focus.dropdown-toggle.show{
+	color: orange;
+}
+.dropdown-item:hover{
+	color: orange;
 }
