@@ -18,10 +18,10 @@ p{
 	color: #aaa;
 } */
 
-h2{
+/* h2{ */
 	/* color: #aaa; */
 	/* border-bottom: 1px solid #ccc; */
-}
+/* } */
 
 main {
 	min-height: 65vh;
@@ -34,6 +34,11 @@ main {
 	height: 40px;
 	padding: 0 3px
 }
+
+.home-links a{
+	display: block;
+}
+
 .postTitle{
 	padding: 2rem 0;
 	margin: 2rem auto;
@@ -59,7 +64,9 @@ main {
 	width: 100%;
 	max-width: 1024px;
 }
-
+.homeGallery .imgCard img.socialNav{
+	width: 44px;
+}
 .siteTitle a{
 	text-decoration: none;
 	font-size: 1.5rem;
