@@ -26,6 +26,10 @@ p{
 main {
 	min-height: 65vh;
 }
+.avatar{
+	max-width: 100%;
+}
+
 .headerLogo{
 	height: 125px;
 	/* padding: .5em; */
@@ -79,11 +83,11 @@ main {
 }
 
 .intro{
-	/* text-align: center; */
-	font-size: 14pt;
-	width: 75%;
-	margin-left: auto;
-	margin-right: auto;
+	font-size: 1.3rem;
+	line-height: 1.5;
+	/* width: 75%; */
+	/* margin-left: auto;
+	margin-right: auto; */
 }
 
 .summary,
