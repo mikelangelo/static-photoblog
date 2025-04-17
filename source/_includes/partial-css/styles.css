@@ -41,7 +41,9 @@ main {
 }
 
 .headerLogo{
-	height: 125px;
+	width: 100%;
+	max-width: 500px;
+	/* max-height: 125px; */
 	/* padding: .5em; */
 }
 .socialNav{
