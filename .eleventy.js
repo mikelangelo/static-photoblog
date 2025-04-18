@@ -148,10 +148,7 @@ module.exports = function(eleventyConfig) {
 	// Returns a bootstrap icon
 	eleventyConfig.addShortcode("icon", function(name) {
 		/* {% icon house %} */
-		console.log("icon name is " + name);
 		let iconName = "node_modules/bootstrap-icons/icons/" + name + ".svg";
-		console.log(iconName);
-		iconName = "node_modules/bootstrap-icons/icons/list.svg";
 		return fs.readFileSync(iconName).toString();
 	});
 
@@ -220,7 +217,10 @@ module.exports = function(eleventyConfig) {
 
 	// If you want to have a standalone css file for bootstrap, uncomment this line
 	// eleventyConfig.addPassthroughCopy({"source/_includes/partial-css/bootstrap.css": "css/bootstrap.css"});
+	eleventyConfig.addPassthroughCopy({"source/_includes/gridzy/gridzy.min.css": "css/gridzy.min.css"});
 	eleventyConfig.addPassthroughCopy({"source/_includes/partial-js/bootstrap.js": "js/bootstrap.js"});
+	eleventyConfig.addPassthroughCopy({"source/_includes/gridzy/gridzy.min.js": "js/gridzy.min.js"});
+
 
 
 	/* Markdown Overrides */

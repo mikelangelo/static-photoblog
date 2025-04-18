@@ -11,17 +11,24 @@
 		gtag('config', 'G-0NLSYZ4DWJ');
 	</script>
 
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>{{ title }} | {{ metadata.title }}</title>
 	<meta name="description" content="{{ description or metadata.description }}">
 
+
+
+
 	{% include "source/_includes/site-components/head-meta-tags.njk" %}
 
 	{% include "source/_includes/site-components/head-css-tags.njk" %}
+	<link href="/css/gridzy.min.css" rel="stylesheet">
+
+
 </head>
-<body class="bg-body-tertiary">
+<body>
 
 	{% include "source/_includes/site-components/header.njk" %}
 
@@ -32,6 +39,5 @@
 	{% include "source/_includes/site-components/footer.njk" %}
 
 	{% include "source/_includes/site-components/footer-js-tags.njk" %}
-
 </body>
 </html>

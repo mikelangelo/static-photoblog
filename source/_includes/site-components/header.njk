@@ -1,49 +1,66 @@
-<header class="container-fluid mb-4">
-	<div class="row align-items-center justify-content-between py-1">
-		<nav class="navbar navbar-expand-lg">
-			<div class="container-fluid d-flex justify-content-between">
-				<div class="flex-grow-1">
-				<a href="/" class="navbar-brand"><img src="/images/Mikelangelo-horizontal-fullColor.png" alt = "{{ metadata.title }}" class="headerLogo image-fluid" /></a>
+<header class="container-fluid mb-4 mb-4">
 
-			</div>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon">
-					{% icon list %}
-				</span>
-		  	</button>
-				<div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
-					<ul class="navbar-nav mb-2 mb-lg-0">
-						<li class="nav-item">
-							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Galleries</a>
-          					<ul class="dropdown-menu">
-          					    <!-- <li><span>MOTORSPORTS</span></li> -->
-								<li><a class="dropdown-item" href="https://mikelangelo.client-gallery.com/category/motor-sports">Motorsports</a></li>
-          					    <!-- <li><a class="dropdown-item" href="/portfolio/motorsports/">Dirt Oval</a></li>
-							    <li><a class="dropdown-item" href="">Go Kart Dirt Racing</a></li>
-								<li><a class="dropdown-item" href="">Drag Racing</a></li> -->
-								<!-- <li><hr class="dropdown-divider"><span>RC RACING</span></li> -->
-								<li><a class="dropdown-item" href="https://mikelangelo.client-gallery.com/category/rc">RC Racing</a></li>
-								<!-- <li><a class="dropdown-item" href="">Off Road</a></li>
-								<li><a class="dropdown-item" href="">Oval</a></li>
-								<li><hr class="dropdown-divider"><span>EQUESTRIAN</span></li>
-								<li><a class="dropdown-item" href="">Dressage</a></li>
-								<li><hr class="dropdown-divider"><span>PORTRAITS</span></li>
-								<li><a class="dropdown-item" href="">Dressage</a></li> -->
+   	<div class="row">
+	<nav class="navbar navbar-expand-md">
+    <div class="container-fluid">
 
-          					</ul>
-						</li>
-						<!-- <li class="nav-item"><a href="https://mikelangelo.client-gallery.com/category/motor-sports" class="nav-link">Motorsports</a></li> -->
-						<!-- <li class="nav-item"><a href="/portfolio/motorsports/" class="nav-link">Motorsports</a></li> -->
-						<!-- <li class="nav-item"><a href="/portfolio/rc-racing/" class="nav-link">RC Racing</a></li> -->
-						<!-- <li class="nav-item"><a href="/posts/" class="nav-link">Photoblog</a></li> -->
-						<li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
-						<!-- <li class="nav-item"><a href="/connect/" class="nav-link">Let's Connect</a></li> -->
-						<li class="nav-item"><a href="https://www.facebook.com/mikelangelophotography" target="_blank" class="nav-link"><img src="/images/Facebook_Logo_Primary.png"  class="socialNav" alt="Mikelangelo Photography on Facebook" /></a></li>
-						<li class="nav-item"><a href="https://www.instagram.com/mikelangelo27/" target="_blank" class="nav-link"><img src="/images/Instagram_Glyph_Gradient.svg" class="socialNav" alt="Mikelangelo on Instagram" /></a></li>
-					</ul>
-				</div>
-			</div>
-			</div>
-		</nav>
-	</div><!-- end row -->
+      <a class="navbar-brand" href="/"><img src="/images/Mikelangelo-horizontal-fullColor.png" alt = "{{ metadata.title }}" class="headerLogo image-fluid" /></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+			<i class="bi-list nav-icon"></i>
+		</span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+
+        <ul class="navbar-nav mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-body-emphasis" href="/about/">About</a>
+          </li>
+		  <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Galleries
+          </a>
+          <ul class="dropdown-menu">
+			<li class="dropdown-item">
+            	<a class="nav-item nav-link link-body-emphasis" href="https://mikelangelo.client-gallery.com/category/motor-sports">Motorsports</a>
+          	</li>
+			<li class="dropdown-item">
+            	<a class="nav-item nav-link link-body-emphasis" href="https://mikelangelo.client-gallery.com/category/rc">Motorsports</a>
+          	</li>
+			<li><hr class="dropdown-divider"></li>
+		  	<li class="dropdown-item">
+            	<a class="nav-link link-body-emphasis" href="#">Equestrian</a>
+          	</li>
+			<li><hr class="dropdown-divider"></li>
+		  	<li class="dropdown-item">
+            	<a class="nav-link link-body-emphasis" href="#">Pets</a>
+          	</li>
+			<li><hr class="dropdown-divider"></li>
+		  	<li class="dropdown-item">
+            	<a class="nav-link link-body-emphasis" href="#">Personal Work</a>
+          </li>
+          </ul>
+        </li>
+		<li class="nav-item">
+			<a href="https://www.facebook.com/mikelangelophotography" target="_blank" class="nav-link">
+				<i class="bi-facebook icon-ig"></i>
+			</a>
+		  </li>
+	    <li class="nav-item">
+			<a href="https://www.instagram.com/mikelangelo27/" target="_blank" class="nav-link">
+				<i class="bi-instagram icon-fb"></i>
+			</a>
+		</li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+	</div>
 </header><!-- end container -->
+
+

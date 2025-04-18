@@ -24,7 +24,7 @@
 	},
 	"homepage": "https://github.com/brewhousedigital/celestial-light#readme",
 	"devDependencies": {
-		"@11ty/eleventy": "^0.12.1",
+		"@11ty/eleventy": "1.0.0",
 		"@11ty/eleventy-navigation": "^0.1.6",
 		"@11ty/eleventy-plugin-rss": "^1.1.1",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
@@ -35,11 +35,11 @@
 		"luxon": "^1.26.0",
 		"markdown-it": "^12.0.4",
 		"markdown-it-anchor": "^7.1.0",
-		"postcss": "^8.2.14",
+		"postcss": "^8.5.3",
 		"slugify": "^1.5.0",
-		"terser": "^5.7.0"
+		"terser": "^5.39.0"
 	},
 	"dependencies": {
-		"exifreader": "^4.21.0"
+		"exifreader": "^4.28.1"
 	}
 }
