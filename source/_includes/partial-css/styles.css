@@ -20,7 +20,7 @@ a:active{
 
 a.nav-link{
 	color: #777;
-	fontize: 1.25rem;
+	font-size: 1.5rem;
 }
 
 a.nav-link:hover{
@@ -102,11 +102,8 @@ img{
 }
 
 .intro{
-	/* font-size: 1.3rem; */
+	font-size: 1.2rem;
 	line-height: 1.5;
-	/* width: 75%; */
-	/* margin-left: auto;
-	margin-right: auto; */
 }
 
 .summary,
