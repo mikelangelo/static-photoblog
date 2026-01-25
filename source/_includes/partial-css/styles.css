@@ -33,7 +33,7 @@ a.nav-link:hover{
 
 icon-fb,
 icon-ig{
-	font-size
+
 }
 
 main {
@@ -122,7 +122,7 @@ header{
 
 .navbar-toggler{
  margin-left: auto;
- margin-top: -20px;
+ /* margin-top: -10px; */
  margin-right: -15px;
 }
 .navbar-toggler-icon svg{
@@ -131,7 +131,7 @@ header{
 	color: #f6851f;
 }
 .navbar-toggler{
-	border-color: orange;
+	/* border-color: orange; */
 }
 .navbar-toggler:focus{
 	box-shadow: none;
