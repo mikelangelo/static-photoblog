@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Race Track Events</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent:    #FF5C00;
+    --accent-lt: #FFF0E8;
+    --accent-dk: #cc4800;
+    --ink:       #111111;
+    --ink-2:     #555555;
+    --ink-3:     #999999;
+    --rule:      #E8E8E8;
+    --bg:        #FFFFFF;
+    --bg-2:      #F7F7F5;
+    --bg-3:      #F0EFEB;
+    --shoot-bg:  #FFF8F2;
+    --radius:    6px;
+    --shadow-sm: 0 1px 4px rgba(0,0,0,0.07);
+    --shadow-md: 0 4px 20px rgba(0,0,0,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+    min-height: 100%;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 62px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .brand-logo {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .brand-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+  .brand-name {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+
+  .brand-tagline {
+    font-size: 10px;
+    color: var(--ink-3);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-top: 1px;
+  }
+
+  .hdiv {
+    width: 1px;
+    height: 28px;
+    background: var(--rule);
+    flex-shrink: 0;
+  }
+
+  .filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    flex-wrap: wrap;
+  }
+
+  .filter-select {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-2);
+    background: var(--bg-2);
+    border: 1px solid var(--rule);
+    padding: 6px 26px 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    transition: border-color 0.15s;
+  }
+
+  .filter-select:focus { border-color: var(--accent); color: var(--ink); }
+
+  .toggle-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-2);
+    background: var(--bg-2);
+    border: 1px solid var(--rule);
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+    outline: none;
+    letter-spacing: 0.2px;
+  }
+
+  .toggle-pill:hover { border-color: var(--ink-3); color: var(--ink); }
+  .toggle-pill.on { background: var(--accent); border-color: var(--accent); color: white; }
+
+  .reset-btn {
+    margin-left: auto;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.15s;
+    white-space: nowrap;
+  }
+
+  .reset-btn:hover { color: var(--accent); }
+
+  /* ── BODY ── */
+  .app-body { display: flex; flex: 1; overflow: hidden; min-height: 0; }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    width: 340px;
+    flex-shrink: 0;
+    background: var(--bg);
+    border-right: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .sidebar-top {
+    padding: 12px 18px 10px;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .sidebar-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  .sidebar-count {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .sidebar-scroll {
+    overflow-y: auto;
+    flex: 1;
+    padding: 16px;
+  }
+
+  .sidebar-scroll::-webkit-scrollbar { width: 3px; }
+  .sidebar-scroll::-webkit-scrollbar-track { background: transparent; }
+  .sidebar-scroll::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 2px; }
+
+  /* ── TRACK SECTION ── */
+  .track-section { margin-bottom: 18px; }
+
+  .track-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: var(--bg-2);
+    border-radius: var(--radius) var(--radius) 0 0;
+    cursor: pointer;
+    transition: background 0.15s;
+    border: 1px solid var(--rule);
+    border-bottom: none;
+  }
+
+  .track-header:hover { background: var(--bg-3); }
+
+  .track-logo-sm {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: var(--bg-3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--ink-3);
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+  }
+
+  .track-logo-sm img { width: 100%; height: 100%; object-fit: cover; }
+
+  .track-info { flex: 1; min-width: 0; }
+
+  .tname {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: var(--ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .taddr {
+    font-size: 10px;
+    color: var(--ink-3);
+    margin-top: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .event-stack {
+    border: 1px solid var(--rule);
+    border-top: none;
+    border-radius: 0 0 var(--radius) var(--radius);
+    overflow: hidden;
+  }
+
+  .event-row {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--rule);
+    cursor: pointer;
+    transition: background 0.12s;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .event-row:last-child { border-bottom: none; }
+  .event-row:hover { background: var(--bg-2); }
+
+  .event-row.shooting {
+    background: var(--shoot-bg);
+    border-left: 3px solid var(--accent);
+    padding-left: 9px;
+  }
+
+  .event-row.shooting:hover { background: #ffede0; }
+
+  .date-col {
+    flex-shrink: 0;
+    text-align: center;
+    width: 38px;
+  }
+
+  .d-month {
+    font-family: 'Oswald', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .d-day {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--ink);
+    line-height: 1.05;
+  }
+
+  .d-dow {
+    font-size: 9px;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .event-main { flex: 1; min-width: 0; }
+
+  .event-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+
+  .chip {
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 7px;
+    border-radius: 10px;
+    line-height: 1.5;
+  }
+
+  .chip-time {
+    background: var(--bg-3);
+    color: var(--ink-2);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .chip-promoter {
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--ink-3);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .chip-shoot {
+    background: var(--accent);
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── MAP ── */
+  #map { flex: 1; min-height: 0; width: 100%; height: 100%; background: #f5f5f0; }
+
+  /* ── LEGEND ── */
+  .map-legend {
+    position: absolute;
+    bottom: 28px;
+    right: 14px;
+    z-index: 999;
+    background: white;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 10px 14px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .legend-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 11px;
+    color: var(--ink-2);
+    font-family: 'DM Sans', sans-serif;
+    white-space: nowrap;
+  }
+
+  .legend-row:last-child { margin-bottom: 0; }
+
+  .legend-pin {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── POPUP ── */
+  .leaflet-popup-content-wrapper {
+    background: white !important;
+    border: 1px solid var(--rule) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.13) !important;
+    padding: 0 !important;
+  }
+
+  .leaflet-popup-content { margin: 0 !important; width: auto !important; }
+  .leaflet-popup-tip { background: white !important; }
+
+  .leaflet-popup-close-button {
+    color: #bbb !important;
+    font-size: 20px !important;
+    top: 10px !important;
+    right: 12px !important;
+  }
+
+  .popup-inner { padding: 18px 18px 14px; min-width: 280px; max-width: 320px; }
+
+  .popup-track-hdr {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .popup-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: var(--bg-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink-3);
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+  }
+
+  .popup-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+  .popup-track-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+
+  .popup-addr {
+    font-size: 11px;
+    color: var(--ink-3);
+    margin-top: 2px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .popup-evs-lbl {
+    font-family: 'Oswald', sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 8px;
+  }
+
+  .popup-ev {
+    padding: 9px 10px;
+    border-radius: 6px;
+    background: var(--bg-2);
+    margin-bottom: 6px;
+    border-left: 3px solid transparent;
+  }
+
+  .popup-ev.shooting {
+    background: var(--shoot-bg);
+    border-left-color: var(--accent);
+  }
+
+  .popup-ev:last-child { margin-bottom: 0; }
+
+  .popup-ev-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .popup-no-evs {
+    text-align: center;
+    padding: 14px;
+    color: var(--ink-3);
+    font-size: 12px;
+    font-style: italic;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 760px) {
+    .app-body { flex-direction: column; }
+    .sidebar { width: 100%; max-height: 38vh; border-right: none; border-bottom: 1px solid var(--rule); }
+    header { flex-wrap: wrap; height: auto; padding: 10px 16px; gap: 8px; }
+    .filter-bar { flex-wrap: wrap; }
+    .hdiv { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="brand-logo" id="brand-logo">PH</div>
+    <div>
+      <div class="brand-name" id="brand-name">Your Name Photography</div>
+      <div class="brand-tagline">Race Track Event Map</div>
+    </div>
+  </div>
+
+  <div class="hdiv"></div>
+
+  <div class="filter-bar">
+    <select class="filter-select" id="month-filter">
+      <option value="">All Months</option>
+    </select>
+
+    <select class="filter-select" id="track-filter">
+      <option value="">All Tracks</option>
+    </select>
+
+    <button class="toggle-pill" id="weekend-btn">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+        <rect x="2" y="3" width="12" height="11" rx="2"/><path d="M5 1v3M11 1v3M2 7h12"/>
+      </svg>
+      Weekends
+    </button>
+
+    <button class="toggle-pill" id="shoot-btn">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+        <circle cx="8" cy="9" r="3"/><path d="M1 6h2l1.5-2h7L13 6h2v7H1V6z"/>
+      </svg>
+      My Shoots
+    </button>
+
+    <button class="reset-btn" id="reset-btn">Clear filters</button>
+  </div>
+</header>
+
+<div class="app-body">
+  <div class="sidebar">
+    <div class="sidebar-top">
+      <span class="sidebar-label">Events</span>
+      <span class="sidebar-count" id="event-count">0</span>
+    </div>
+    <div class="sidebar-scroll" id="sidebar-content"></div>
+  </div>
+
+  <div style="position:relative;flex:1;overflow:hidden;min-height:0;height:100%;">
+    <div id="map"></div>
+    <div class="map-legend">
+      <div class="legend-row">
+        <div class="legend-pin" style="background:#555"></div>Race Track
+      </div>
+      <div class="legend-row">
+        <div class="legend-pin" style="background:var(--accent)"></div>I'm Shooting Here
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+// ================================================================
+//  DATA — loaded from events.json (must be in same folder, served via web server)
+// ================================================================
+let DATA = null;
+
+// ── MAP ──────────────────────────────────────────────────────────
+const map = L.map('map', { zoomControl: true }).setView([33.0, -96.2], 7);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  subdomains: 'abcd', maxZoom: 19
+}).addTo(map);
+
+// ── STATE ────────────────────────────────────────────────────────
+const state = { month: '', track: '', weekends: false, myShots: false };
+const markerMap = {};
+
+// ── UTILS ────────────────────────────────────────────────────────
+const parseDate = s => new Date(s + 'T00:00:00');
+const isWeekend = s => { const d = parseDate(s).getDay(); return d === 0 || d === 5 || d === 6; };
+const monthKey  = s => s.slice(0,7);
+const monthLbl  = k => { const [y,m]=k.split('-'); return new Date(+y,+m-1,1).toLocaleDateString('en-US',{month:'long',year:'numeric'}); };
+const fmtMon    = s => parseDate(s).toLocaleDateString('en-US',{month:'short'}).toUpperCase();
+const fmtDay    = s => parseDate(s).getDate();
+const fmtDOW    = s => parseDate(s).toLocaleDateString('en-US',{weekday:'short'}).toUpperCase();
+const fmtFull   = s => parseDate(s).toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+const passes    = e => {
+  if (state.month   && monthKey(e.date) !== state.month) return false;
+  if (state.weekends && !isWeekend(e.date))               return false;
+  if (state.myShots  && !e.iAmShooting)                   return false;
+  return true;
+};
+
+// ── FILTERS ──────────────────────────────────────────────────────
+function buildFilters() {
+  const months = new Set();
+  DATA.tracks.forEach(t => t.events.forEach(e => months.add(monthKey(e.date))));
+  const mSel = document.getElementById('month-filter');
+  [...months].sort().forEach(m => {
+    const o = document.createElement('option'); o.value = m; o.textContent = monthLbl(m); mSel.appendChild(o);
+  });
+  const tSel = document.getElementById('track-filter');
+  DATA.tracks.forEach(t => {
+    const o = document.createElement('option'); o.value = t.id; o.textContent = t.name; tSel.appendChild(o);
+  });
+}
+
+// ── MARKER ───────────────────────────────────────────────────────
+function makeIcon(shooting) {
+  const bg  = shooting ? '#FF5C00' : '#555';
+  const glow = shooting ? '0 3px 12px rgba(255,92,0,0.4)' : '0 2px 8px rgba(0,0,0,0.18)';
+  return L.divIcon({
+    className: '',
+    html: `<div style="width:30px;height:38px;position:relative;">
+      <div style="width:30px;height:30px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:${bg};
+        border:2.5px solid white;box-shadow:${glow};display:flex;align-items:center;justify-content:center;">
+        <span style="transform:rotate(45deg);font-size:12px;">${shooting ? '📷' : '🏁'}</span>
+      </div>
+    </div>`,
+    iconSize: [30, 38], iconAnchor: [15, 38], popupAnchor: [0, -40]
+  });
+}
+
+// ── POPUP ────────────────────────────────────────────────────────
+function makePopup(track, evs) {
+  const logo = track.logo
+    ? `<img src="${track.logo}" style="width:100%;height:100%;object-fit:cover;" alt="">`
+    : track.initials;
+
+  const evHTML = evs.length === 0
+    ? `<div class="popup-no-evs">No events match current filters</div>`
+    : evs.map(e => `
+      <div class="popup-ev${e.iAmShooting?' shooting':''}">
+        <div class="popup-ev-name">${e.name}</div>
+        <div class="chips">
+          <span class="chip chip-time">${fmtFull(e.date)} · ${e.time}</span>
+          ${e.promoter!=='Track Hosted'?`<span class="chip chip-promoter">${e.promoter}</span>`:''}
+          ${e.iAmShooting?`<span class="chip chip-shoot">📷 Shooting</span>`:''}
+        </div>
+      </div>`).join('');
+
+  return `<div class="popup-inner">
+    <div class="popup-track-hdr">
+      <div class="popup-logo">${logo}</div>
+      <div>
+        <div class="popup-track-name">${track.name}</div>
+        <div class="popup-addr">${track.address}</div>
+      </div>
+    </div>
+    <div class="popup-evs-lbl">Upcoming Events</div>
+    ${evHTML}
+  </div>`;
+}
+
+// ── RENDER ───────────────────────────────────────────────────────
+function render() {
+  // Markers
+  Object.values(markerMap).forEach(m => m.remove());
+  Object.keys(markerMap).forEach(k => delete markerMap[k]);
+
+  DATA.tracks.forEach(track => {
+    if (state.track && track.id !== state.track) return;
+    const evs = track.events.filter(passes).sort((a,b) => a.date.localeCompare(b.date));
+    const shooting = evs.some(e => e.iAmShooting);
+    const m = L.marker([track.lat, track.lng], { icon: makeIcon(shooting) })
+      .addTo(map)
+      .bindPopup(makePopup(track, evs), { maxWidth: 340 });
+    markerMap[track.id] = m;
+  });
+
+  // Sidebar
+  const container = document.getElementById('sidebar-content');
+  container.innerHTML = '';
+  let total = 0;
+
+  DATA.tracks.forEach(track => {
+    if (state.track && track.id !== state.track) return;
+    const evs = track.events.filter(passes).sort((a,b) => a.date.localeCompare(b.date));
+    if (!evs.length) return;
+    total += evs.length;
+
+    const logoContent = track.logo
+      ? `<img src="${track.logo}" style="width:100%;height:100%;object-fit:cover;" alt="">`
+      : `<span>${track.initials}</span>`;
+
+    const rows = evs.map(e => `
+      <div class="event-row${e.iAmShooting?' shooting':''}" data-tid="${track.id}" data-lat="${track.lat}" data-lng="${track.lng}">
+        <div class="date-col">
+          <div class="d-month">${fmtMon(e.date)}</div>
+          <div class="d-day">${fmtDay(e.date)}</div>
+          <div class="d-dow">${fmtDOW(e.date)}</div>
+        </div>
+        <div class="event-main">
+          <div class="event-title">${e.name}</div>
+          <div class="chips">
+            <span class="chip chip-time">${e.time}</span>
+            ${e.promoter!=='Track Hosted'?`<span class="chip chip-promoter">${e.promoter}</span>`:''}
+            ${e.iAmShooting?`<span class="chip chip-shoot">📷 Shooting</span>`:''}
+          </div>
+          ${e.classes?`<div style="font-size:10px;color:var(--ink-3);margin-top:4px;font-family:'DM Sans',sans-serif;line-height:1.4;">${e.classes}</div>`:''}
+        </div>
+      </div>`).join('');
+
+    const sec = document.createElement('div');
+    sec.className = 'track-section';
+    sec.innerHTML = `
+      <div class="track-header" data-tid="${track.id}">
+        <div class="track-logo-sm">${logoContent}</div>
+        <div class="track-info"><div class="tname">${track.name}</div><div class="taddr">${track.address}</div></div>
+        <span style="font-size:10px;color:var(--ink-3)">▶</span>
+      </div>
+      <div class="event-stack">${rows}</div>`;
+    container.appendChild(sec);
+  });
+
+  if (!total) {
+    container.innerHTML = `<div style="padding:32px 16px;text-align:center;color:var(--ink-3);font-style:italic;font-size:13px;">No events match your current filters.</div>`;
+  }
+
+  document.getElementById('event-count').textContent = total;
+
+  // Interactions
+  container.querySelectorAll('.track-header').forEach(el => {
+    el.addEventListener('click', () => {
+      const t = DATA.tracks.find(t => t.id === el.dataset.tid);
+      if (!t) return;
+      map.flyTo([t.lat, t.lng], 12, { duration: 0.9 });
+      setTimeout(() => markerMap[t.id]?.openPopup(), 800);
+    });
+  });
+
+  container.querySelectorAll('.event-row').forEach(el => {
+    el.addEventListener('click', () => {
+      map.flyTo([+el.dataset.lat, +el.dataset.lng], 13, { duration: 0.9 });
+      setTimeout(() => markerMap[el.dataset.tid]?.openPopup(), 800);
+    });
+  });
+}
+
+// ── CONTROLS ─────────────────────────────────────────────────────
+document.getElementById('month-filter').addEventListener('change', e => { state.month = e.target.value; render(); });
+document.getElementById('track-filter').addEventListener('change', e => { state.track = e.target.value; render(); });
+
+document.getElementById('weekend-btn').addEventListener('click', function() {
+  state.weekends = !state.weekends; this.classList.toggle('on', state.weekends); render();
+});
+
+document.getElementById('shoot-btn').addEventListener('click', function() {
+  state.myShots = !state.myShots; this.classList.toggle('on', state.myShots); render();
+});
+
+document.getElementById('reset-btn').addEventListener('click', () => {
+  state.month = ''; state.track = ''; state.weekends = false; state.myShots = false;
+  document.getElementById('month-filter').value = '';
+  document.getElementById('track-filter').value = '';
+  document.getElementById('weekend-btn').classList.remove('on');
+  document.getElementById('shoot-btn').classList.remove('on');
+  render();
+});
+
+// ── BRAND ────────────────────────────────────────────────────────
+function applyBrand() {
+  const ph = DATA.photographer;
+  document.getElementById('brand-name').textContent = ph.name;
+  if (ph.logo) {
+    document.getElementById('brand-logo').innerHTML = `<img src="${ph.logo}" style="width:100%;height:100%;object-fit:cover;border-radius:8px;" alt="">`;
+  } else {
+    document.getElementById('brand-logo').textContent = ph.initials;
+  }
+}
+
+// ── INIT ─────────────────────────────────────────────────────────
+async function init() {
+  // Show loading state
+  document.getElementById('sidebar-content').innerHTML =
+    `<div style="padding:32px 16px;text-align:center;color:var(--ink-3);font-size:13px;">Loading events…</div>`;
+
+  try {
+    const res = await fetch('racemap.json');
+    if (!res.ok) throw new Error(`Could not load events.json (HTTP ${res.status})`);
+    DATA = await res.json();
+  } catch (err) {
+    document.getElementById('sidebar-content').innerHTML =
+      `<div style="padding:20px 16px;font-size:12px;color:#c00;line-height:1.6;">
+        <strong>⚠ Could not load events.json</strong><br><br>
+        Make sure <code>events.json</code> is in the <strong>same folder</strong> as this HTML file
+        and you are accessing it through a <strong>web server</strong>
+        (not by double-clicking the file — browsers block local JSON fetches for security).<br><br>
+        <em>${err.message}</em>
+      </div>`;
+    return;
+  }
+
+  applyBrand();
+  buildFilters();
+  render();
+
+  // Force Leaflet to recalculate map container size after full page render
+  window.addEventListener('load', () => { map.invalidateSize(); });
+  setTimeout(() => map.invalidateSize(), 100);
+}
+
+init();
+</script>
+</body>
+</html>
