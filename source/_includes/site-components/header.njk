@@ -4,7 +4,7 @@
 	<nav class="navbar navbar-expand-md">
     <div class="container">
 
-      <a class="navbar-brand" href="/"><img src="/images/Mikelangelo-horizontal-fullColor.png" alt = "{{ metadata.title }}" class="headerLogo image-fluid" /></a>
+      <a class="navbar-brand" href="/"><img src="/images/MP-Logo-Color.png" alt = "{{ metadata.title }}" class="headerLogo image-fluid" /></a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon">
@@ -19,39 +19,61 @@
             <a class="nav-link" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link-body-emphasis" href="/about/">About</a>
+            <a class="nav-link" href="/about/">About</a>
           </li>
+
+{# ------ PORTFOLIO LINKS ------- #}
+		  {# <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Portfolio
+          </a>
+          <ul class="dropdown-menu">
+			<li class="dropdown-item">
+            	<a class="nav-item nav-link" href="/portfolio/motorsports">Motorsports</a>
+          	</li>
+			<li><hr class="dropdown-divider"></li>
+			<li class="dropdown-item">
+            	<a class="nav-item nav-link" href="/portfolio/rc">RC Racing</a>
+          	</li>
+			<li><hr class="dropdown-divider"></li>
+		  	<li class="dropdown-item">
+            	<a class="nav-link" href="/portfolio/equestrian">Equestrian</a>
+          	</li>
+			<li><hr class="dropdown-divider"></li>
+		  	<li class="dropdown-item">
+            	<a class="nav-link" href="/portfolio/pets">Pets</a>
+          	</li>
+			<li><hr class="dropdown-divider"></li>
+		  	<li class="dropdown-item">
+            	<a class="nav-link" href="/portfolio/personal">Personal Work</a>
+          </li>
+          </ul>
+        </li> #}
+{# ------ GALLERY LINKS ------- #}
 		  <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Galleries
           </a>
           <ul class="dropdown-menu">
 			<li class="dropdown-item">
-            	<a class="nav-item nav-link link-body-emphasis" href="https://mikelangelo.client-gallery.com/category/motor-sports">Motorsports</a>
+            	<a class="nav-item nav-link" href="https://mikelangelo.client-gallery.com/category/motor-sports">Motorsports <i class="bi bi-box-arrow-up-right"></i></a>
           	</li>
 			<li class="dropdown-item">
-            	<a class="nav-item nav-link link-body-emphasis" href="https://mikelangelo.client-gallery.com/category/rc">RC Racing</a>
+            	<a class="nav-item nav-link" href="https://mikelangelo.client-gallery.com/category/rc">RC Racing <i class="bi bi-box-arrow-up-right"></i></a>
           	</li>
 			{# <li><hr class="dropdown-divider"></li> #}
 		  	{# <li class="dropdown-item">
             	<a class="nav-link link-body-emphasis" href="#">Equestrian</a>
           	</li> #}
-			{# <li><hr class="dropdown-divider"></li> #}
-		  	{# <li class="dropdown-item">
-            	<a class="nav-link link-body-emphasis" href="#">Pets</a>
-          	</li>
-			<li><hr class="dropdown-divider"></li>
-		  	<li class="dropdown-item">
-            	<a class="nav-link link-body-emphasis" href="#">Personal Work</a>
-          </li> #}
+
           </ul>
         </li>
-		<li class="nav-item">
+		<li class="nav-item social">
 			<a href="https://www.facebook.com/mikelangelophotography" target="_blank" class="nav-link">
 				<i class="bi-facebook icon-ig"></i>
 			</a>
 		  </li>
-	    <li class="nav-item">
+	    <li class="nav-item social">
 			<a href="https://www.instagram.com/mikelangelo27/" target="_blank" class="nav-link">
 				<i class="bi-instagram icon-fb"></i>
 			</a>

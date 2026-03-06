@@ -54,7 +54,7 @@ img{
 }
 .headerLogo{
 	width: 100%;
-	max-width: 300px;
+	max-width: 350px;
 }
 
 .socialNav{
@@ -106,8 +106,24 @@ img{
 }
 
 .intro{
-	font-size: 1.2rem;
-	line-height: 1.5;
+	padding-top: 2em;
+	font-size: 1.5rem;
+	line-height: 2;
+}
+
+.silly{
+	font-size: 1rem;
+	opacity: .75;
+}
+
+.callout{
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	background-color: #ddd;
+	padding: 1em;
+	color: #222;
+	font-size: 1.25rem;
+	margin: 1.5rem;
 }
 
 .summary,
@@ -133,7 +149,7 @@ header{
 	color: #f6851f;
 }
 .navbar-toggler{
-	/* border-color: orange; */
+	/* border-color: #f68520; */
 }
 .navbar-toggler:focus{
 	box-shadow: none;
@@ -153,13 +169,25 @@ li span,
 	padding: .5em 1em;
 	font-weight: bold;
 	font-style: italic;
-	color: orange;
+	color: #f68520;
 }
 link:hover,
 .nav-link:focus,
 .nav-link:focus.dropdown-toggle.show{
-	color: orange;
+	color: #f68520;
+
 }
 .dropdown-item:hover{
-	color: orange;
+	color: #f68520;
+}
+
+.dropdown-item .nav-link:hover{
+	text-decoration: none;
+	color: white;
+	background-color: #f68520;
+}
+
+.nav-item.social .nav-link{
+	font-size: 1.75rem;
+	line-height: 1;
 }
