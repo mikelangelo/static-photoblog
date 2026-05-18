@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Texas Race Weekend Grid 2026</title>
+<style>
+  /* ── BRAND TOKENS ────────────────────────────────────────── */
+  :root {
+    /* Your brand palette */
+    --primary-orange:      #e56a00;
+    --ada-orange:          #b85200;
+    --pastel-orange:       #ffb066;
+    --primary-warm-gray:   #1f1f1f;
+    --dark-gray-text:      #333333;
+    --med-gray-text:       #666666;
+    --light-gray:          #d9d9d9;
+    --lightest-gray:       #f7f7f7;
+    --lightest-warm-gray:  #faf9f7;
+
+    /* Mapped to UI roles */
+    --bg:        var(--lightest-warm-gray);
+    --surface:   #ffffff;
+    --surface2:  var(--lightest-gray);
+    --border:    var(--light-gray);
+    --border2:   #c8c8c8;
+    --text:      var(--primary-warm-gray);
+    --text-2:    var(--med-gray-text);
+    --text-3:    #999999;
+    --accent:    var(--primary-orange);
+    --accent-dk: var(--ada-orange);
+    --accent-lt: #fff3e8;
+
+    /* Cell type colors — warm, on-brand palette */
+    --fri-bg:    #e8f0fe;   /* soft blue tint — Friday */
+    --fri-bd:    #93b4f5;
+    --fri-tx:    #2a5bc4;
+
+    --sat-bg:    #f3eaff;   /* soft violet — Saturday */
+    --sat-bd:    #b98fe8;
+    --sat-tx:    #6b21c8;
+
+    --multi-bg:  #fff3e8;   /* brand pastel orange — special */
+    --multi-bd:  var(--pastel-orange);
+    --multi-tx:  var(--ada-orange);
+
+    --prac-bg:   var(--lightest-gray);
+    --prac-bd:   var(--light-gray);
+    --prac-tx:   var(--text-3);
+  }
+
+  /* ── CENTURY GOTHIC STACK ────────────────────────────────── */
+  /* Century Gothic is a system/installed font; we stack it with
+     a Google Fonts alternative (Nunito) as a graceful fallback.  */
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Century Gothic', CenturyGothic, 'Nunito', 'Trebuchet MS', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 36px 24px 64px;
+  }
+
+  /* ── PAGE HEADER ─────────────────────────────────────────── */
+  .page-header {
+    max-width: 1400px;
+    margin: 0 auto 28px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--primary-orange);
+  }
+
+  .page-title .year {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .page-title h1 {
+    font-size: clamp(26px, 3.5vw, 44px);
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    color: var(--text);
+  }
+
+  .page-title h1 span { color: var(--accent); }
+
+  /* ── LEGEND ──────────────────────────────────────────────── */
+  .legend {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 12px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--text-2);
+  }
+
+  .legend-dot {
+    width: 22px; height: 22px;
+    border-radius: 5px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 0;
+  }
+
+  /* ── FILTER BAR ──────────────────────────────────────────── */
+  .filter-bar {
+    max-width: 1400px;
+    margin: 0 auto 18px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .filter-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-right: 2px;
+  }
+
+  .filter-btn {
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1.5px solid var(--border2);
+    background: var(--surface);
+    color: var(--text-2);
+    cursor: pointer;
+    transition: all 0.15s;
+    outline: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .filter-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-lt); }
+  .filter-btn.on    { background: var(--accent); border-color: var(--accent); color: white; box-shadow: 0 2px 8px rgba(229,106,0,0.3); }
+
+  .filter-sep { width: 1px; height: 22px; background: var(--border); margin: 0 6px; }
+
+  /* ── TABLE WRAPPER ───────────────────────────────────────── */
+  .table-wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow-x: auto;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 700px;
+    background: var(--surface);
+  }
+
+  /* ── MONTH HEADER ROW ────────────────────────────────────── */
+  thead tr.month-row th {
+    background: var(--primary-orange);
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: white;
+    padding: 9px 0 7px;
+    text-align: center;
+    border-bottom: none;
+    white-space: nowrap;
+  }
+
+  thead tr.month-row th.track-col {
+    background: var(--primary-warm-gray);
+    color: transparent;
+    border-right: 2px solid rgba(255,255,255,0.15);
+  }
+
+  /* ── DATE ROW ────────────────────────────────────────────── */
+  thead tr.date-row th {
+    background: var(--surface2);
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: var(--text-2);
+    text-align: center;
+    padding: 8px 4px 7px;
+    border-bottom: 2px solid var(--border2);
+    white-space: nowrap;
+    min-width: 58px;
+  }
+
+  thead tr.date-row th .date-day {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--dark-gray-text);
+    line-height: 1;
+    display: block;
+  }
+
+  thead tr.date-row th .date-dow {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-3);
+    display: block;
+    margin-top: 2px;
+  }
+
+  thead tr.date-row th.track-col {
+    text-align: left;
+    min-width: 190px;
+    padding: 8px 16px 7px;
+    border-right: 2px solid var(--border2);
+    background: var(--surface2);
+    color: transparent;
+  }
+
+  th.weekend-fri { border-left: 1.5px solid var(--border2); }
+  td.weekend-fri { border-left: 1.5px solid var(--border2); }
+
+  /* ── TRACK ROW HEADER (sticky) ───────────────────────────── */
+  tbody td.track-col {
+    background: var(--surface);
+    border-right: 2px solid var(--border2);
+    padding: 11px 14px 11px 16px;
+    white-space: nowrap;
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    box-shadow: 2px 0 6px rgba(0,0,0,0.06);
+  }
+
+  .track-abbr {
+    display: inline-block;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    background: var(--primary-orange);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+
+  .track-name {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--dark-gray-text);
+    line-height: 1.15;
+  }
+
+  .track-city {
+    font-size: 11px;
+    color: var(--text-2);
+    margin-top: 2px;
+    font-weight: 500;
+  }
+
+  /* ── DATA CELLS ──────────────────────────────────────────── */
+  tbody td {
+    padding: 6px 4px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+    background: var(--surface);
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+
+  tbody tr:hover td:not(.track-col) {
+    background: #fef8f3;
+  }
+
+  /* ── RACE CELL PILL ──────────────────────────────────────── */
+  .cell-inner {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    min-height: 38px;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    cursor: default;
+    transition: transform 0.12s, box-shadow 0.12s;
+    padding: 4px 3px;
+  }
+
+  .cell-inner:hover {
+    transform: scale(1.1);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    z-index: 10;
+    position: relative;
+  }
+
+  .cell-inner.fri   { background: var(--fri-bg);   border: 1.5px solid var(--fri-bd);   color: var(--fri-tx);   }
+  .cell-inner.sat   { background: var(--sat-bg);   border: 1.5px solid var(--sat-bd);   color: var(--sat-tx);   }
+  .cell-inner.multi { background: var(--multi-bg); border: 1.5px solid var(--multi-bd); color: var(--multi-tx); }
+  .cell-inner.prac  { background: var(--prac-bg);  border: 1.5px solid var(--prac-bd);  color: var(--prac-tx);  }
+
+  .cell-inner .ci-icon  { font-size: 13px; line-height: 1; }
+  .cell-inner .ci-label { font-size: 7.5px; margin-top: 2px; }
+
+  .cell-empty { width: 46px; min-height: 38px; display: inline-block; }
+
+  /* ── TODAY HIGHLIGHT ─────────────────────────────────────── */
+  th.today-col .date-day { color: var(--accent) !important; }
+  th.today-col            { background: var(--accent-lt) !important; }
+  td.today-col            { background: #fff8f2 !important; outline: 2px solid var(--pastel-orange); outline-offset: -2px; }
+
+  /* ── TOOLTIP ─────────────────────────────────────────────── */
+  [data-tip] { position: relative; }
+  [data-tip]:hover::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-warm-gray);
+    border: 1px solid #444;
+    color: #f0f0f0;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 7px;
+    white-space: normal;
+    z-index: 100;
+    pointer-events: none;
+    max-width: 240px;
+    text-align: left;
+    line-height: 1.45;
+    letter-spacing: 0;
+    text-transform: none;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+  }
+
+  /* ── SUMMARY CARDS ───────────────────────────────────────── */
+  .summary-bar {
+    max-width: 1400px;
+    margin: 20px auto 0;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .summary-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--primary-orange);
+    border-radius: 8px;
+    padding: 14px 20px;
+    flex: 1;
+    min-width: 140px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .summary-card .sc-label {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-bottom: 5px;
+  }
+
+  .summary-card .sc-val {
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--dark-gray-text);
+    line-height: 1;
+  }
+
+  .summary-card .sc-sub {
+    font-size: 11px;
+    color: var(--text-2);
+    margin-top: 3px;
+    font-weight: 500;
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────────────── */
+  @media (max-width: 600px) {
+    body { padding: 16px 10px 40px; }
+    .page-header { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="page-title">
+    <div class="year">2026 Season</div>
+    <h1>Texas Race <span>Weekend</span> Grid</h1>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#2a5bc4;">F</div>
+      Friday Race
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#6b21c8;">S</div>
+      Saturday Race
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:var(--ada-orange);">★</div>
+      Multi-Day Special
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#aaaaaa;">P</div>
+      Practice
+    </div>
+    <div class="legend-item">
+      <div class="cell-empty" style="width:22px;height:22px;border-radius:5px;background:var(--lightest-gray);border:1.5px solid var(--light-gray);display:inline-block;vertical-align:middle;"></div>
+      No Event
+    </div>
+  </div>
+</div>
+
+<div class="filter-bar">
+  <span class="filter-label">Jump to:</span>
+  <button class="filter-btn" onclick="scrollToMonth('feb')">Feb</button>
+  <button class="filter-btn" onclick="scrollToMonth('mar')">Mar</button>
+  <button class="filter-btn" onclick="scrollToMonth('apr')">Apr</button>
+  <button class="filter-btn" onclick="scrollToMonth('may')">May</button>
+  <button class="filter-btn" onclick="scrollToMonth('jun')">Jun</button>
+  <button class="filter-btn" onclick="scrollToMonth('jul')">Jul</button>
+  <button class="filter-btn" onclick="scrollToMonth('aug')">Aug</button>
+  <button class="filter-btn" onclick="scrollToMonth('sep')">Sep</button>
+  <button class="filter-btn" onclick="scrollToMonth('oct')">Oct</button>
+  <button class="filter-btn" onclick="scrollToMonth('nov')">Nov</button>
+  <div class="filter-sep"></div>
+  <button class="filter-btn" id="conflict-btn" onclick="toggleConflicts()">⚡ Highlight Conflicts</button>
+  <button class="filter-btn" id="myshoot-btn" onclick="toggleMyShoot()">📷 My Shoots Only</button>
+</div>
+
+<div class="table-wrap">
+  <table id="grid-table">
+    <thead id="grid-head"></thead>
+    <tbody id="grid-body"></tbody>
+  </table>
+</div>
+
+<div class="summary-bar" id="summary-bar"></div>
+
+<script>
+// ================================================================
+//  DATA — all Friday & Saturday race dates for 2026
+//  To add more tracks: push a new object into TRACKS
+//  To mark your shoot dates: add the date string to iAmShooting arrays
+// ================================================================
+
+const TRACKS = [
+  {
+    id: 'rrp',
+    name: 'Rocket Raceway Park',
+    abbr: 'RRP',
+    city: 'Paris, TX',
+    events: [
+      // FEB
+      { date:'2026-02-28', type:'sat', label:'Shakedown',         note:'Factory Stocks, Limited/B Mods, Stock Cars, Eco/Jr Mods, Mods' },
+      // MAR
+      { date:'2026-03-21', type:'sat', label:'Champ Night 1',     note:'Factory Stocks, Limited/B Mods, Stock Cars, Eco & Jr Mods, Dwarf' },
+      // APR
+      { date:'2026-04-02', type:'thu', label:'Smackdown',         note:'11th Annual Smackdown — multi-day Apr 2–4', special:'multi' },
+      { date:'2026-04-03', type:'fri', label:'Smackdown',         note:'11th Annual Smackdown Day 2 — Factory Stocks, Ltd/B Mods, Stock Cars, Eco & Jr Ltd Mods', special:'multi' },
+      { date:'2026-04-04', type:'sat', label:'Smackdown',         note:'11th Annual Smackdown Day 3 — Factory Stocks, Ltd/B Mods, Stock Cars, Eco & Jr Ltd Mods', special:'multi' },
+      { date:'2026-04-18', type:'sat', label:'Champ Night 2',     note:'Factory Stocks, Ltd/B Mods, Stock Cars, Eco, Jr Ltd Mods & SSM' },
+      { date:'2026-04-25', type:'sat', label:'Champ Night 3',     note:'Modifieds, Ltd/B Mods, Stock Cars, Eco & Jr Ltd Mods' },
+      // MAY
+      { date:'2026-05-01', type:'fri', label:'Mayhem in May',     note:'Factory Stocks, Ltd/B Mods, Stock Cars, Mods & 410 Sprint Cars' },
+      { date:'2026-05-16', type:'sat', label:'Champ Night 4',     note:'Factory Stocks, Ltd/B Mods, Stock Cars, Eco & Jr Ltd Mods' },
+      { date:'2026-05-20', type:'wed', label:'Racesaver',         note:'Racesaver Speedweek — 305 Sprint Cars, Ltd/B Mods, Factory Stocks & Modifieds' },
+      // JUN
+      { date:'2026-06-06', type:'sat', label:'Champ Night 5',     note:'Factory Stocks, Mods, Ltd/B Mods, Eco & Jr Ltd Mods, SWM' },
+      { date:'2026-06-20', type:'sat', label:'Champ Night 6',     note:'Factory Stocks, Mods, Ltd/B Mods, Eco/Jr Mods, Stock Cars & SSM' },
+      { date:'2026-06-27', type:'sat', label:'Champ Night 7',     note:'Factory Stocks, Stock Cars, Jr Limiteds & TOMS Series' },
+      // JUL
+      { date:'2026-07-02', type:'thu', label:'Freedom Speedweek', note:'Lone Star Freedom Speedweek — Stock Cars Twin 20s, Crate LM & Mods' },
+      { date:'2026-07-25', type:'sat', label:'Champ Night 8',     note:'Factory Stocks, Ltd/B Mods, Stock Cars, Eco/Jr Mods & ARMS' },
+      // AUG
+      { date:'2026-08-08', type:'sat', label:'Jr Ltd Nationals',  note:'Factory Stocks, Ltd/B Mods, Modifieds + Little Tex 100' },
+      // SEP
+      { date:'2026-09-03', type:'thu', label:'Bryan Mize Mem',    note:'Bryan Mize Memorial Day 1 — multi-day Sep 3–5', special:'multi' },
+      { date:'2026-09-04', type:'fri', label:'Bryan Mize Mem',    note:'Bryan Mize Memorial Day 2 — Factory Stocks, Ltd/B Mods, Eco Mods, Crate LM & TOMS/STIMS', special:'multi' },
+      { date:'2026-09-05', type:'sat', label:'Bryan Mize Mem',    note:'Bryan Mize Memorial Day 3 — Factory Stocks, Ltd/B Mods, Eco Mods, Crate LM & TOMS/STIMS', special:'multi' },
+      { date:'2026-09-19', type:'sat', label:'Champ Night 9',     note:'Factory Stocks, Ltd/B Mods, Stock Cars, Eco Mods, Mods & Dwarf' },
+      // OCT
+      { date:'2026-10-02', type:'fri', label:'Super Tex 600',     note:'Super Tex 600 Day 1 — 300 Laps, All Cars, All Classes', special:'multi' },
+      { date:'2026-10-03', type:'sat', label:'Super Tex 600',     note:'Super Tex 600 Day 2', special:'multi' },
+      { date:'2026-10-08', type:'thu', label:'Dwarf Nationals',   note:'Dwarf Car Nationals Day 1 — multi-day Oct 8–10', special:'multi' },
+      { date:'2026-10-09', type:'fri', label:'Dwarf Nationals',   note:'Dwarf Car Nationals Day 2', special:'multi' },
+      { date:'2026-10-10', type:'sat', label:'Dwarf Nationals',   note:'Dwarf Car Nationals Day 3', special:'multi' },
+      { date:'2026-10-16', type:'fri', label:'Late Model Natls',  note:'Late Model Nationals Day 1 — Factory Stocks, Ltd/B Mods, Stock Cars, Crate LM', special:'multi' },
+      { date:'2026-10-17', type:'sat', label:'Late Model Natls',  note:'Late Model Nationals Day 2', special:'multi' },
+      { date:'2026-10-24', type:'sat', label:'Champ Night 10',    note:'Ltd/B Mods, Factory Stocks, Eco/Jr Ltd Mods, Stock Cars & SWM' },
+      // NOV
+      { date:'2026-11-14', type:'sat', label:'Champ Night 11',    note:'Factory Stocks, Ltd/B Mods, Stock Cars, Eco, Jr Mods & Dwarf' },
+    ],
+    iAmShooting: [] // add date strings here e.g. '2026-04-04'
+  },
+
+  {
+    id: 'hcr',
+    name: 'Hunt County Raceway',
+    abbr: 'HCR',
+    city: 'Greenville, TX',
+    events: [
+      { date:'2026-02-11', type:'wed', label:'Longhorn RU',       note:'Longhorn Round Up — multi-day Feb 11–14', special:'multi' },
+      { date:'2026-02-13', type:'fri', label:'Longhorn RU',       note:'Longhorn Round Up Day 3 — Mods $10k, Ltd/B-Mods $4k, Factory Stocks', special:'multi' },
+      { date:'2026-02-14', type:'sat', label:'Longhorn RU',       note:'Longhorn Round Up Day 4 — Jr. Limited & Eco Mods added (Saturday only)', special:'multi' },
+      { date:'2026-03-27', type:'fri', label:'Jack Webb Mem',     note:'Jr. Limiteds, Eco Mods, Factory Stocks, Stock Cars, Ltd/B-Mods, Mods' },
+      { date:'2026-04-03', type:'fri', label:'Points Night',      note:'Jr. Limiteds, Eco Mods, Factory Stocks, Stock Cars, Ltd/B-Mods, Sprints' },
+      { date:'2026-05-01', type:'fri', label:'Jerry Shipp Mem',   note:'5th Annual Jerry Shipp Memorial — Jr. Limiteds, Eco Mods, Factory Stocks, Stock Cars, Ltd/B-Mods, ACLM' },
+      { date:'2026-05-22', type:'fri', label:'Sprint Speed Wk',   note:'Racesaver Sprint Speed Week — Jr. Limiteds, Eco Mods, Factory Stocks, Ltd/B-Mods, Sprints' },
+      { date:'2026-06-26', type:'fri', label:'Charlie Brown',     note:'Charlie Brown Classic — Jr. Limiteds, Eco Mods, Factory Stocks, Stock Cars, Ltd/B-Mods, TOMS' },
+      { date:'2026-07-03', type:'fri', label:'Tommy Davis Mem',   note:'Tommy Davis Memorial / Freedom Speedweek — Jr. Limiteds, Eco Mods, Factory Stocks, Stock Cars, Ltd/B-Mods, Mods, ACLMS Lone Star' },
+      { date:'2026-07-10', type:'fri', label:'Freedom Speedwk',   note:'Jr. Limiteds, Eco Mods, Factory Stocks, Stock Cars, Ltd/B-Mods, Sprints' },
+      { date:'2026-07-17', type:'fri', label:'Revival SDS',       note:'Revival Super Dirt Series — Jr. Limiteds, Eco Mods, Factory Stocks, Stock Cars, Ltd/B-Mods, Super Late Models' },
+      { date:'2026-07-31', type:'fri', label:'ACLM Night',        note:'American Crate Late Models — Jr. Limiteds, Eco Mods, Factory Stocks, Stock Cars, Ltd/B-Mods' },
+      { date:'2026-08-07', type:'fri', label:'SSMS Night',        note:'Southern States Mod Series — Jr. Limiteds, Eco Mods, Factory Stocks, Stock Cars, Ltd/B-Mods, Mods' },
+      { date:'2026-08-14', type:'fri', label:'Powder Puff',       note:'Jr. Limiteds, Eco Mods, Factory Stocks, Stock Cars, Ltd/B-Mods, Mods, Powder Puff Race' },
+      { date:'2026-08-21', type:'fri', label:'Final Points',      note:'Final Points Night — Jr. Limiteds, Eco Mods, Factory Stocks, Stock Cars, Ltd/B-Mods, Mods, Mechanics Race' },
+      { date:'2026-09-26', type:'sat', label:'Hella Shrine',      note:'12th Annual Hella Shrine Classic / Hunter Hopson Memorial — Jr. Limiteds, Eco Mods, Factory Stocks, Stock Cars, Ltd/B-Mods, TOMS' },
+      { date:'2026-11-28', type:'sat', label:'Gobbler',           note:'4th Annual Gobbler — Jr. Limiteds, Eco Mods, Factory Stocks, Stock Cars, Ltd/B-Mods, Mods, Sprints' },
+    ],
+    iAmShooting: []
+  },
+
+  {
+    id: 'ksp',
+    name: 'Kennedale Speedway Park',
+    abbr: 'KSP',
+    city: 'Kennedale, TX',
+    events: [
+      { date:'2026-02-27', type:'fri', label:'Spring Kickoff',    note:'IMCA Mods, SSM, IS, FS, ECO, SC' },
+      { date:'2026-02-28', type:'sat', label:'Spring Kickoff',    note:'IMCA Mods, SSM, IS, FS, ECO, SC' },
+      { date:'2026-03-06', type:'fri', label:'USMTS Nationals',   note:'USMTS 11th Annual Winter Nationals — Modifieds, Limiteds, Factory Stocks', special:'multi' },
+      { date:'2026-03-07', type:'sat', label:'USMTS Nationals',   note:'USMTS 11th Annual Winter Nationals Day 2', special:'multi' },
+      { date:'2026-03-13', type:'fri', label:'World of Outlaws',  note:'World of Outlaws Sprints — IMCA Mods $1,000 to win', special:'multi' },
+      { date:'2026-03-14', type:'sat', label:'World of Outlaws',  note:'World of Outlaws — IMCA Stock Cars $1,000 to win', special:'multi' },
+      { date:'2026-03-21', type:'sat', label:'IMCA Points',       note:'IMCA Track Points Start — IMCA Mods, SSM, IS, FS, ECO, SC' },
+      { date:'2026-03-28', type:'sat', label:'Sprint Cars',       note:'Sprint Cars $1,000 to win, SSM, IS, FS, JRLTD' },
+      { date:'2026-04-04', type:'sat', label:'Kid Candy Rush',    note:'IMCA Mods, SSM, IS, FS, ECO, SC' },
+      { date:'2026-04-11', type:'sat', label:'Sprint Cars',       note:'Sprint Cars, SSM, IS, FS, JRLTD' },
+      { date:'2026-04-18', type:'sat', label:'REV Super LM',      note:'REV Super Late Models $3,000 to win — IMCA Mods, SSM, IStock', special:'multi' },
+      { date:'2026-04-25', type:'sat', label:'Kids Power Wheels', note:'Sprint Cars, SSM, IS, FS, JRLTD' },
+      { date:'2026-05-02', type:'sat', label:'Kids Bicycle Race', note:'IMCA Mods, SSM, IS, FS, ECO, SC' },
+      { date:'2026-05-09', type:'sat', label:'TX Sprint Natls',   note:'Texas Sprint Nationals $5,000 to win & $500 Dash — SSM, IS, FS', special:'multi' },
+      { date:'2026-05-16', type:'sat', label:'Factory Stock $1k', note:'IMCA Mod, SSM, IS, ECO — Factory Stock $1,000 to win' },
+      { date:'2026-05-23', type:'sat', label:'IMCA AllStar Tour', note:'IMCA Modified AllStar Tour — Mods, SSM, IS, FS (race #3)', special:'multi' },
+      { date:'2026-05-30', type:'sat', label:'ACLM / Meet',       note:'American Crate Late Models — SSM, IS, FS, ECO — Meet N Greet the Fans', special:'multi' },
+      { date:'2026-06-06', type:'sat', label:'Sprint Cars',       note:'Sprint Cars, SSM, IS, FS, JRLTD' },
+      { date:'2026-06-13', type:'sat', label:'Kids Box Car Race', note:'IMCA Mods, SSM, IS, FS, ECO' },
+      { date:'2026-06-20', type:'sat', label:'Sprint Cars',       note:'Sprint Cars, SSM, IS, FS, JRLTD' },
+      { date:'2026-06-27', type:'sat', label:'Trailer Race',      note:'SSM, IS, FS — IMCA Mods $1,000 to win' },
+      { date:'2026-07-11', type:'sat', label:'Kids Silver Rush',  note:'Sprint Cars, SSM, IS, FS, JRLTD' },
+      { date:'2026-07-18', type:'sat', label:'Stock Car $1k',     note:'IMCA Mods, SSM, IS, FS, ECO — Stock Car $1,000 to win' },
+      { date:'2026-07-25', type:'sat', label:'Meet N Greet',      note:'Sprint Cars, SSM, IS, FS, JRLTD — Meet N Greet the Fans' },
+      { date:'2026-08-01', type:'sat', label:'Powder Puff',       note:'IMCA Mods, SSM, IS, FS, ECO, SC — Powder Puff Race' },
+      { date:'2026-08-08', type:'sat', label:'Sprint Cars',       note:'Sprint Cars, SSM, IS, FS, JRLTD' },
+      { date:'2026-08-15', type:'sat', label:'Kids Ride Cars',    note:'IMCA Mods, SSM, IS, FS — ECO $1,000 to win' },
+      { date:'2026-08-22', type:'sat', label:'Sprint Cars',       note:'Sprint Cars, SSM, IS, FS, JRLTD' },
+      { date:'2026-08-29', type:'sat', label:'TOMS Outlaw',       note:'TOMS Outlaw Modified Series — SSM, IS, FS — Meet N Greet', special:'multi' },
+      { date:'2026-09-05', type:'sat', label:'Summit Prelude',    note:'Summit Super Nationals Prelude — Sprint Cars $1,500 to win, IS, FS, ECO', special:'multi' },
+      { date:'2026-09-11', type:'fri', label:'Summit Natls',      note:'Summit Super Nationals / TX Shootout — SSM/FS, SSM AllStar, FS pit crew challenge', special:'multi' },
+      { date:'2026-09-12', type:'sat', label:'Summit Natls',      note:'Summit Super Nationals / TX Shootout — SSM-FS $5,000 to win, Stock Cars $1,000 to win', special:'multi' },
+      { date:'2026-09-19', type:'sat', label:'Sprint Cars $1.5k', note:'Sprint Cars $1,500 to win, SSM, IS, FS, JRLTD — Kids Bicycle Giveaway', special:'multi' },
+      { date:'2026-09-25', type:'fri', label:'Summit Showdown',   note:'Summit Showdown — IMCA Mods, SSM, IS, FS, ECO — IMCA Points', special:'multi' },
+      { date:'2026-09-26', type:'sat', label:'Summit Showdown',   note:'Summit Showdown — IMCA Mods, SSM, IS, FS — Trailer Race, IMCA Points', special:'multi' },
+      { date:'2026-11-07', type:'sat', label:'Monster Trucks',    note:'Monster Trucks — 2 Shows Saturday AM/PM', special:'multi' },
+    ],
+    iAmShooting: []
+  },
+
+  {
+    id: 'rpm',
+    name: 'RPM Speedway',
+    abbr: 'RPM',
+    city: 'Crandall, TX',
+    events: [
+      { date:'2026-03-07', type:'sat', label:'Practice',          note:'Practice Day', special:'prac' },
+      { date:'2026-03-14', type:'sat', label:'Practice',          note:'Practice Day', special:'prac' },
+      { date:'2026-03-21', type:'sat', label:'Practice',          note:'Practice Day', special:'prac' },
+      { date:'2026-03-28', type:'sat', label:'Opening Night',     note:'Opening Night — Tuners, Factory Stocks, Sport Mods, Modifieds' },
+      { date:'2026-04-04', type:'sat', label:'TOMS Modifieds',    note:'TOMS Modifieds — Factory Stocks, Sport Mods, Sigman Modified Makeup Feature', special:'multi' },
+      { date:'2026-04-11', type:'sat', label:'Crate Late Models', note:'Crate Late Models — Factory Stocks, Sport Mods, Modifieds', special:'multi' },
+      { date:'2026-04-18', type:'sat', label:'Sigman Makeup',     note:'Tuners, Dwarfs, Factory Stocks, Sport Mods, 305 Sprints — Sigman Factory Stock Makeup' },
+      { date:'2026-04-25', type:'sat', label:'Points Night',      note:'Factory Stocks, Stock Cars, Sport Mods, Modifieds' },
+      { date:'2026-05-02', type:'sat', label:'Sigman Sport Mod',  note:'Tuners, Factory Stocks, Sport Mods, 305 Sprints — Sigman Sport Mod Makeup' },
+      { date:'2026-05-09', type:'sat', label:'Points Night',      note:'Tuners, Factory Stocks, Sport Mods, Modifieds' },
+      { date:'2026-05-16', type:'sat', label:'Points Night',      note:'Dwarfs, Factory Stocks, Stock Cars, Sport Mods' },
+      { date:'2026-05-23', type:'sat', label:'Racesaver Speedwk', note:'Racesaver Speedweek — Factory Stocks, Sport Mods, Modifieds', special:'multi' },
+      { date:'2026-05-30', type:'sat', label:'TOMS Modifieds',    note:'TOMS Modifieds — Tuners, Factory Stocks, Sport Mods', special:'multi' },
+      { date:'2026-06-06', type:'sat', label:'Points Night',      note:'Factory Stocks, Stock Cars, Sport Mods, Modifieds' },
+      { date:'2026-06-13', type:'sat', label:'Crate Late Models', note:'Crate Late Models — Factory Stocks, Sport Mods, 305 Sprints', special:'multi' },
+      { date:'2026-06-20', type:'sat', label:'Points Night',      note:'Tuners, Factory Stocks, Sport Mods, Modifieds' },
+      { date:'2026-06-27', type:'sat', label:'Points Night',      note:'Dwarfs, Factory Stocks, Sport Mods, 305 Sprints' },
+      { date:'2026-07-11', type:'sat', label:'TOMS Modifieds',    note:'TOMS Modifieds — Tuners, Factory Stocks, Sport Mods', special:'multi' },
+      { date:'2026-07-18', type:'sat', label:'Spectator Race',    note:'Spectator Race — Factory Stocks, Sport Mods, Modifieds, 305 Sprints', special:'multi' },
+      { date:'2026-07-25', type:'sat', label:'Points Night',      note:'Tuners, Dwarfs, Factory Stocks, Stock Cars, Sport Mods' },
+      { date:'2026-08-01', type:'sat', label:'Crate Late Models', note:'Crate Late Models — Factory Stocks, Sport Mods, 305 Sprints', special:'multi' },
+      { date:'2026-08-08', type:'sat', label:'Points Night',      note:'Tuners, Factory Stocks, Sport Mods, Modifieds' },
+      { date:'2026-08-15', type:'sat', label:'Points Night',      note:'Factory Stocks, Sport Mods, Modifieds, 305 Sprints' },
+      { date:'2026-08-22', type:'sat', label:'TOMS / Sigman',     note:'TOMS Modifieds — Sigman Memorial Race — Factory Stocks, Stock Cars, Sport Mods', special:'multi' },
+      { date:'2026-08-29', type:'sat', label:'Points Night',      note:'Tuners, Dwarfs, Factory Stocks, Sport Mods, 305 Sprints' },
+      { date:'2026-09-12', type:'sat', label:'Front Wheel Drive', note:'Front Wheel Drive Long Jump — Crate Late Models, Factory Stocks, Sport Mods, Modifieds', special:'multi' },
+      { date:'2026-09-19', type:'sat', label:'Points Night',      note:'Factory Stocks, Sport Mods, Modifieds, 305 Sprints' },
+      { date:'2026-09-26', type:'sat', label:'Trailer Race',      note:'Trailer Race — Dwarfs, Factory Stocks, Sport Mods, 305 Sprints', special:'multi' },
+      { date:'2026-10-03', type:'sat', label:'Mod Lites',         note:'Mod Lites — Factory Stocks, Sport Mods, Modifieds', special:'multi' },
+      { date:'2026-10-10', type:'sat', label:'ASCS 360 Sprints',  note:'ASCS 360 Sprints — Factory Stocks, Sport Mods, Modifieds', special:'multi' },
+      { date:'2026-10-17', type:'sat', label:'Points Night',      note:'Factory Stocks, Sport Mods, Modifieds, 305 Sprints' },
+      { date:'2026-10-22', type:'thu', label:'Practice & Pits',   note:'Practice & Pit Party' },
+      { date:'2026-10-23', type:'fri', label:'TOMS Modifieds',    note:'TOMS Modifieds — Factory Stocks, Sport Mods', special:'multi' },
+      { date:'2026-10-24', type:'sat', label:'TOMS Modifieds',    note:'TOMS Modifieds — Factory Stocks, Sport Mods', special:'multi' },
+    ],
+    iAmShooting: []
+  }
+];
+
+// ================================================================
+//  BUILD WEEKEND COLUMNS
+//  Only Fri and Sat. Group consecutive Fri+Sat into a "weekend pair".
+// ================================================================
+
+function isoToDate(s) { return new Date(s + 'T00:00:00'); }
+function dateToIso(d) {
+  const y = d.getFullYear();
+  const m = String(d.getMonth()+1).padStart(2,'0');
+  const dd = String(d.getDate()).padStart(2,'0');
+  return `${y}-${m}-${dd}`;
+}
+function getDOW(s) { return isoToDate(s).getDay(); } // 0=Sun,5=Fri,6=Sat
+
+// Collect every unique Fri/Sat date across all tracks
+const allDates = new Set();
+TRACKS.forEach(t => t.events.forEach(e => {
+  const dow = getDOW(e.date);
+  if (dow === 5 || dow === 6) allDates.add(e.date);
+}));
+const sortedDates = [...allDates].sort();
+
+// Build event lookup: trackId -> date -> event[]
+const lookup = {};
+TRACKS.forEach(t => {
+  lookup[t.id] = {};
+  t.events.forEach(e => {
+    if (!lookup[t.id][e.date]) lookup[t.id][e.date] = [];
+    lookup[t.id][e.date].push(e);
+  });
+});
+
+// Group dates into weekend pairs (Fri+Sat within the same ISO week)
+// A "weekend" = same week number pairing
+function weekOf(iso) {
+  const d = isoToDate(iso);
+  // Use Fri as anchor: Fri is 5, so offset to get to preceding Monday
+  // Actually just use the Fri date as the week key
+  const dow = d.getDay();
+  const fri = new Date(d);
+  if (dow === 6) fri.setDate(d.getDate() - 1); // walk back to Fri
+  return dateToIso(fri);
+}
+
+const weekMap = {}; // weekKey -> { fri: date|null, sat: date|null }
+sortedDates.forEach(d => {
+  const wk = weekOf(d);
+  if (!weekMap[wk]) weekMap[wk] = { fri: null, sat: null };
+  if (getDOW(d) === 5) weekMap[wk].fri = d;
+  if (getDOW(d) === 6) weekMap[wk].sat = d;
+});
+
+const weekKeys = Object.keys(weekMap).sort();
+
+// Month grouping for header
+function monthOf(iso) { return iso.slice(0,7); }
+function monthName(iso) {
+  const [y,m] = iso.split('-');
+  return new Date(+y,+m-1,1).toLocaleDateString('en-US',{month:'long'});
+}
+
+// ── BUILD TABLE ────────────────────────────────────────────────
+const today = dateToIso(new Date());
+
+function cellHTML(track, date) {
+  if (!date) return `<td style="background:var(--bg);border-bottom:1px solid var(--border);"></td>`;
+  const events = lookup[track.id][date] || [];
+  const isShooting = track.iAmShooting.includes(date);
+  const dow = getDOW(date) === 5 ? 'FRI' : 'SAT';
+  const isToday = date === today;
+
+  if (events.length === 0) {
+    return `<td class="${date === today ? 'today-col':''} ${getDOW(date)===5?'weekend-fri':''}">
+      <span class="cell-empty"></span></td>`;
+  }
+
+  // Determine display type
+  const ev = events[0];
+  let cls = getDOW(date) === 5 ? 'fri' : 'sat';
+  if (ev.special === 'multi') cls = 'multi';
+  if (ev.special === 'prac')  cls = 'prac';
+
+  const icon = cls === 'multi' ? '★' : cls === 'prac' ? 'P' : cls === 'fri' ? 'F' : 'S';
+  const shootBadge = isShooting ? '<div style="font-size:9px;margin-top:2px;">📷</div>' : '';
+  const tipText = events.map(e => `${e.label}${e.note ? ': ' + e.note : ''}`).join('\n');
+
+  return `<td class="${isToday?'today-col':''} ${getDOW(date)===5?'weekend-fri':''}" data-date="${date}" data-track="${track.id}">
+    <span class="cell-inner ${cls}" data-tip="${tipText.replace(/"/g,'&quot;')}">
+      <span class="ci-icon">${icon}</span>
+      <span class="ci-label">${events[0].label.length > 9 ? events[0].label.slice(0,8)+'…' : events[0].label}</span>
+      ${shootBadge}
+    </span>
+  </td>`;
+}
+
+function build() {
+  const thead = document.getElementById('grid-head');
+  const tbody = document.getElementById('grid-body');
+
+  // ── MONTH ROW ──
+  const monthRow = document.createElement('tr');
+  monthRow.className = 'month-row';
+  monthRow.innerHTML = `<th class="track-col" id="th-track">Tracks</th>`;
+
+  // ── DATE ROW ──
+  const dateRow = document.createElement('tr');
+  dateRow.className = 'date-row';
+  dateRow.innerHTML = `<th class="track-col"></th>`;
+
+  let prevMonth = null;
+  let monthColspan = 0;
+  let monthCells = [];
+
+  weekKeys.forEach(wk => {
+    const {fri, sat} = weekMap[wk];
+    // We show both cols even if only one exists (keep alignment)
+    const refDate = fri || sat;
+    const mo = monthOf(refDate);
+
+    // Fri col
+    if (fri) {
+      const mn = monthOf(fri);
+      if (mn !== prevMonth) { if (prevMonth) monthCells.push({month:prevMonth, span:monthColspan}); prevMonth=mn; monthColspan=0; }
+      monthColspan++;
+      const d = isoToDate(fri);
+      const isToday = fri === today;
+      dateRow.innerHTML += `<th class="${isToday?'today-col':''} weekend-fri" data-date="${fri}">
+        <span class="date-day">${d.getDate()}</span>
+        <span class="date-dow">Fri</span>
+      </th>`;
+    }
+    // Sat col
+    if (sat) {
+      const mn = monthOf(sat);
+      if (mn !== prevMonth) { if (prevMonth) monthCells.push({month:prevMonth, span:monthColspan}); prevMonth=mn; monthColspan=0; }
+      monthColspan++;
+      const d = isoToDate(sat);
+      const isToday = sat === today;
+      dateRow.innerHTML += `<th class="${isToday?'today-col':''}" data-date="${sat}">
+        <span class="date-day">${d.getDate()}</span>
+        <span class="date-dow">Sat</span>
+      </th>`;
+    }
+  });
+  if (prevMonth) monthCells.push({month:prevMonth, span:monthColspan});
+
+  // Fill month row
+  monthCells.forEach(mc => {
+    const abbr = new Date(mc.month + '-01T00:00:00').toLocaleDateString('en-US',{month:'short'}).toLowerCase();
+    monthRow.innerHTML += `<th colspan="${mc.span}" id="month-${abbr}">${monthName(mc.month + '-01')}</th>`;
+  });
+
+  thead.appendChild(monthRow);
+  thead.appendChild(dateRow);
+
+  // ── TRACK ROWS ──
+  TRACKS.forEach(track => {
+    const tr = document.createElement('tr');
+    tr.id = `row-${track.id}`;
+    tr.innerHTML = `<td class="track-col">
+      <div class="track-abbr">${track.abbr}</div>
+      <div class="track-name">${track.name}</div>
+      <div class="track-city">${track.city}</div>
+    </td>`;
+
+    weekKeys.forEach(wk => {
+      const {fri, sat} = weekMap[wk];
+      if (fri) tr.innerHTML += cellHTML(track, fri);
+      if (sat) tr.innerHTML += cellHTML(track, sat);
+    });
+
+    tbody.appendChild(tr);
+  });
+
+  // ── CONFLICT ROW (count per weekend) ──
+  const conflictRow = document.createElement('tr');
+  conflictRow.id = 'conflict-row';
+  conflictRow.style.display = 'none';
+  conflictRow.innerHTML = `<td class="track-col" style="opacity:0.5;">
+    <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;color:var(--text-3);text-transform:uppercase;">Racing On</div>
+  </td>`;
+  weekKeys.forEach(wk => {
+    const {fri, sat} = weekMap[wk];
+    [fri, sat].filter(Boolean).forEach(date => {
+      const count = TRACKS.filter(t => (lookup[t.id][date]||[]).length > 0).length;
+      const color = count >= 3 ? '#b85200' : count === 2 ? '#e56a00' : count === 1 ? '#2a7a2a' : 'var(--text-3)';
+      conflictRow.innerHTML += `<td style="text-align:center;border-bottom:1px solid var(--border);padding:4px;">
+        ${count > 0 ? `<span style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:900;color:${color};">${count}</span>` : ''}
+      </td>`;
+    });
+  });
+  tbody.appendChild(conflictRow);
+
+  buildSummary();
+}
+
+// ── SUMMARY BAR ────────────────────────────────────────────────
+function buildSummary() {
+  const bar = document.getElementById('summary-bar');
+  TRACKS.forEach(t => {
+    const raceDays = t.events.filter(e => getDOW(e.date)===5||getDOW(e.date)===6).filter(e=>e.special!=='prac').length;
+    const specials = t.events.filter(e => (getDOW(e.date)===5||getDOW(e.date)===6) && e.special==='multi').length;
+    const shoots   = t.iAmShooting.length;
+    const card = document.createElement('div');
+    card.className = 'summary-card';
+    card.innerHTML = `
+      <div class="sc-label">${t.abbr}</div>
+      <div class="sc-val">${raceDays}</div>
+      <div class="sc-sub">${specials} special events${shoots ? ` · 📷 ${shoots} shoots` : ''}</div>`;
+    bar.appendChild(card);
+  });
+
+  // Total unique race weekends
+  let raceWeekends = 0;
+  weekKeys.forEach(wk => {
+    const {fri, sat} = weekMap[wk];
+    const hasRace = TRACKS.some(t =>
+      (fri && (lookup[t.id][fri]||[]).length > 0) ||
+      (sat && (lookup[t.id][sat]||[]).length > 0)
+    );
+    if (hasRace) raceWeekends++;
+  });
+
+  const total = document.createElement('div');
+  total.className = 'summary-card';
+  total.innerHTML = `
+    <div class="sc-label">Race Weekends</div>
+    <div class="sc-val" style="color:var(--primary-orange);">${raceWeekends}</div>
+    <div class="sc-sub">across all 4 tracks</div>`;
+  bar.appendChild(total);
+}
+
+// ── SCROLL TO MONTH ────────────────────────────────────────────
+function scrollToMonth(abbr) {
+  const th = document.getElementById(`month-${abbr}`);
+  if (!th) return;
+  const wrapper = document.querySelector('.table-wrap');
+  if (!wrapper) return;
+
+  // offsetLeft of the <th> is relative to the <table>, which is inside the wrapper.
+  // Subtract the sticky track column width so the month label lands at the left edge.
+  const trackColWidth = document.querySelector('thead tr.date-row th.track-col')?.offsetWidth || 190;
+  const targetScroll = th.offsetLeft - trackColWidth;
+
+  wrapper.scrollTo({ left: Math.max(0, targetScroll), behavior: 'smooth' });
+}
+
+// ── TOGGLE CONFLICTS ───────────────────────────────────────────
+let conflictsOn = false;
+function toggleConflicts() {
+  conflictsOn = !conflictsOn;
+  document.getElementById('conflict-row').style.display = conflictsOn ? '' : 'none';
+  document.getElementById('conflict-btn').classList.toggle('on', conflictsOn);
+
+    // Highlight cells where multiple tracks race on same day
+  document.querySelectorAll('td[data-date]').forEach(td => {
+    const date = td.dataset.date;
+    const count = TRACKS.filter(t => (lookup[t.id][date]||[]).length > 0).length;
+    if (conflictsOn && count >= 2) {
+      td.style.outline = '2px solid #e56a00';
+      td.style.outlineOffset = '-2px';
+      td.style.background = '#fff3e8';
+    } else {
+      td.style.outline = '';
+      td.style.outlineOffset = '';
+      td.style.background = '';
+    }
+  });
+}
+
+// ── TOGGLE MY SHOOTS ───────────────────────────────────────────
+let myShootOn = false;
+function toggleMyShoot() {
+  myShootOn = !myShootOn;
+  document.getElementById('myshoot-btn').classList.toggle('on', myShootOn);
+  TRACKS.forEach(t => {
+    const row = document.getElementById(`row-${t.id}`);
+    if (!row) return;
+    if (myShootOn && t.iAmShooting.length === 0) {
+      row.style.opacity = '0.25';
+    } else {
+      row.style.opacity = '';
+    }
+  });
+}
+
+build();
+</script>
+</body>
+</html>
